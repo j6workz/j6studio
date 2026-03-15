@@ -533,10 +533,11 @@ const imgs = [
   {src:'images/MOH04186.JPG', cap:'Together'},
   {src:'images/MOH09989.JPG', cap:'Garden Portrait'},
   {src:'images/MOH09993.JPG', cap:'In Love'},
-  {src:'images/DSC08339.JPG', cap:'Family Group Photo'},
-  {src:'images/DSC08311.JPG', cap:'Family Group Photo'},
-  {src:'images/DSC08638.JPG', cap:'Family Group Photo'},
+  {src:'images/DSC08339.JPG', cap:'Family Celebration'},
+  {src:'images/DSC08311.JPG', cap:'Friends Together'},
+  {src:'images/DSC08638.JPG', cap:'Wedding Joy'},
 ];
+
 let cur = 0;
 const lb = document.getElementById('lb');
 const lbImg = document.getElementById('lbImg');
@@ -553,7 +554,12 @@ function stepLb(d) {
   lbImg.style.opacity='0';
   setTimeout(() => { lbImg.src=imgs[cur].src; lbCtr.textContent=`${cur+1} / ${imgs.length}`; lbImg.style.opacity='1'; }, 200);
 }
-document.querySelectorAll('.g-card').forEach(c => c.addEventListener('click', () => openLb(+c.dataset.li)));
+
+// Wire up ALL photos (both couple and group)
+document.querySelectorAll('.g-card, .g-group-card').forEach(c => {
+  c.addEventListener('click', () => openLb(+c.dataset.li));
+});
+
 document.getElementById('lbClose').addEventListener('click', closeLb);
 document.getElementById('lbPrev').addEventListener('click', ()=>stepLb(-1));
 document.getElementById('lbNext').addEventListener('click', ()=>stepLb(1));
