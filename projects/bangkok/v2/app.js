@@ -9,6 +9,7 @@ import {
   setWeather, markDone, unmarkDone,
   setCurrentDay, setGps
 } from './state.js';
+import { onAuth, signIn, signOut } from './firebase.js';
 
 const $ = sel => document.querySelector(sel);
 const timeline = $('#timeline');
@@ -205,4 +206,50 @@ nowWhatBody.addEventListener('click', e => {
     if (next === active.alt_ids.length) swapState.delete(active.id); else swapState.set(active.id, next);
     rerender();
   }
+});
+
+// === Sign-in screen + whitelist gate ===
+const signinEl = $('#signin');
+const signinBtn = $('#signin-btn');
+const signinError = $('#signin-error');
+const signoutBtn = $('#signout-btn');
+
+function showSignin(errorMsg) {
+  signinEl.classList.remove('hidden');
+  signinEl.setAttribute('aria-hidden', 'false');
+  if (errorMsg) {
+    signinError.textContent = errorMsg;
+    signinError.hidden = false;
+  } else {
+    signinError.hidden = true;
+  }
+}
+function hideSignin() {
+  signinEl.classList.add('hidden');
+  signinEl.setAttribute('aria-hidden', 'true');
+}
+
+signinBtn.addEventListener('click', async () => {
+  signinBtn.disabled = true;
+  try { await signIn(); }
+  catch (e) { showSignin('Sign-in failed: ' + (e.message || e.code)); }
+  finally { signinBtn.disabled = false; }
+});
+
+signoutBtn.addEventListener('click', () => signOut());
+
+onAuth(user => {
+  if (!user) {
+    showSignin();
+    setState({ signedInUser: null });
+    return;
+  }
+  if (user.error === 'not_authorised') {
+    showSignin(`"${user.email}" not on whitelist. Sign in with the right account.`);
+    signOut();
+    return;
+  }
+  hideSignin();
+  signoutBtn.hidden = false;
+  setState({ signedInUser: user });
 });
