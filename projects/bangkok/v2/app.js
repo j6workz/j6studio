@@ -9,7 +9,7 @@ import {
   setWeather, markDone, unmarkDone,
   setCurrentDay, setGps
 } from './state.js';
-import { onAuth, signIn, signOut } from './firebase.js';
+import { onAuth, signIn, signOut, subscribeState, writeState } from './firebase.js';
 
 const $ = sel => document.querySelector(sel);
 const timeline = $('#timeline');
@@ -252,4 +252,35 @@ onAuth(user => {
   hideSignin();
   signoutBtn.hidden = false;
   setState({ signedInUser: user });
+});
+
+// === Firestore bidirectional sync ===
+let unsubscribeRemote = null;
+let applyingRemote = false;
+let lastPushed = '';
+
+subscribe(state => {
+  // Subscribe to remote when signed in
+  if (state.signedInUser && !unsubscribeRemote) {
+    unsubscribeRemote = subscribeState(remote => {
+      if (!remote) return;
+      applyingRemote = true;
+      const patch = {};
+      if (remote.weather && remote.weather !== getState().weather) patch.weather = remote.weather;
+      if (Array.isArray(remote.doneIds) && JSON.stringify(remote.doneIds) !== JSON.stringify(getState().doneIds)) patch.doneIds = remote.doneIds;
+      if (Object.keys(patch).length) setState(patch);
+      applyingRemote = false;
+    });
+  } else if (!state.signedInUser && unsubscribeRemote) {
+    unsubscribeRemote();
+    unsubscribeRemote = null;
+  }
+
+  // Push local mutations to remote
+  if (applyingRemote) return;
+  if (!state.signedInUser) return;
+  const payload = JSON.stringify({ weather: state.weather, doneIds: state.doneIds });
+  if (payload === lastPushed) return;
+  lastPushed = payload;
+  writeState({ weather: state.weather, doneIds: state.doneIds }, state.signedInUser.email);
 });
