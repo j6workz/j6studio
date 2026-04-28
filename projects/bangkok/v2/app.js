@@ -132,3 +132,32 @@ function openAreaPicker() {
   else if (today.getFullYear() === 2026 && today.getMonth() === 4 && today.getDate() === 1) setCurrentDay(2);
   else if (today.getFullYear() === 2026 && today.getMonth() === 4 && today.getDate() === 2) setCurrentDay(3);
 })();
+
+// === GPS watching ===
+function showBanner(msg) {
+  banner.textContent = msg;
+  banner.hidden = false;
+}
+function hideBanner() {
+  banner.hidden = true;
+}
+
+function startGps() {
+  if (!navigator.geolocation) {
+    showBanner('GPS not available. Use "Pick area" to set location.');
+    return;
+  }
+  navigator.geolocation.watchPosition(
+    pos => {
+      setGps({ lat: pos.coords.latitude, lon: pos.coords.longitude });
+      hideBanner();
+    },
+    err => {
+      const msg = err.code === 1 ? 'GPS denied. Use "Pick area" to set location.' : 'GPS unavailable.';
+      showBanner(msg);
+    },
+    { enableHighAccuracy: false, maximumAge: 60_000, timeout: 15_000 }
+  );
+}
+
+startGps();
