@@ -161,3 +161,48 @@ function startGps() {
 }
 
 startGps();
+
+function openNearby() {
+  const s = getState();
+  if (!s.gpsLast) {
+    showBanner('Set location first via "Pick area".');
+    return;
+  }
+  const within = withinKm(s.gpsLast, anchors, 1.5)
+    .filter(a => s.weather !== 'storm' || a.weather !== 'outdoor');
+
+  const items = within.length === 0
+    ? [el('li', {}, 'No anchors within 1.5 km. Try Pick area.')]
+    : within.map(a => {
+        const km = Math.round(haversineKm(s.gpsLast, a.coords) * 10) / 10;
+        const meta = `${km} km · ${a.duration_min} min · ${a.cost_thb ? a.cost_thb + ' THB' : 'free'}`;
+        return el('li', {},
+          el('strong', {}, `${a.emoji} ${a.name}`),
+          el('em', {}, meta),
+          el('br'),
+          el('a', { href: a.gmaps_url, target: '_blank' }, 'Open in Maps')
+        );
+      });
+  replace(nearbyList, ...items);
+  nearbyDialog.querySelector('[data-close]').onclick = () => nearbyDialog.close();
+  nearbyDialog.showModal();
+}
+
+nowWhatBody.addEventListener('click', e => {
+  const btn = e.target.closest('button[data-action]');
+  if (!btn) return;
+  const action = btn.dataset.action;
+  const s = getState();
+  const active = activeSlot(slots, new Date(), s.doneIds, s.currentDay);
+  if (action === 'open-nearby') openNearby();
+  else if (action === 'scroll-active' && active) {
+    document.querySelector(`[data-slot-id="${active.id}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  } else if (action === 'done-active' && active) {
+    markDone(active.id);
+  } else if (action === 'swap-active' && active && active.alt_ids.length) {
+    const cur = swapState.get(active.id);
+    const next = typeof cur === 'number' ? (cur + 1) % (active.alt_ids.length + 1) : 0;
+    if (next === active.alt_ids.length) swapState.delete(active.id); else swapState.set(active.id, next);
+    rerender();
+  }
+});
