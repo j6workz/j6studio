@@ -95,7 +95,8 @@ export function renderSlot(slot, ctx) {
       el('button', { class: 'btn-done', data: { action: 'done', slotId: slot.id } }, isDone ? '↺ Undo' : '✓ Done'),
       slot.alt_ids.length ? el('button', { data: { action: 'swap', slotId: slot.id } }, '↻ Swap') : null,
       isStormBlocked ? el('button', { class: 'btn-storm-alt', data: { action: 'storm-alt', slotId: slot.id } }, '⛈ Storm alt') : null,
-      primary ? el('a', { href: primary.gmaps_url, target: '_blank' }, '📍 Maps') : null
+      primary ? el('a', { href: primary.gmaps_url, target: '_blank' }, '📍 Maps') : null,
+      primary?.shopping_url ? el('a', { href: primary.shopping_url, target: '_blank' }, '📖 Shopping') : null
     )
   );
 }

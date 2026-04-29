@@ -9,6 +9,8 @@
 > "Feels" = apparent temperature including humidity.
 > "UV" — anything ≥ 8 is extreme; sunscreen + hat + shade.
 
+📖 **Companion field manual:** [SHOPPING-GUIDE.md](./SHOPPING-GUIDE.md) — what to buy, which floor, which shop, prices. Open it before each shopping stop. Cross-references inline below.
+
 ---
 
 ## Pre-trip checklist (do tonight)
@@ -83,8 +85,10 @@ Drink **at least 2 bottles of water.** Bangkok heat + jet lag dehydration is rea
 
 **Transport:** Walk 5–8 min from hotel.
 
+📖 [SHOPPING-GUIDE.md → Soi Nana Pharmacy + Halal Essentials](./SHOPPING-GUIDE.md#soi-nana-pharmacy--halal-essentials) — pharmacies, halal grocery, hijab pins, Arabic scents on this street.
+
 **Alternatives & when to use:**
-- *Terminal 21 Pier 21 food court (5F):* if heavy rain or you want AC. Full Thai 50–120 THB. **Use this if rain prob >50% at lunch time.**
+- *Terminal 21 Pier 21 food court (5F):* if heavy rain or you want AC. Full Thai 50–120 THB. **Use this if rain prob >50% at lunch time.** 📖 [Terminal 21 guide](./SHOPPING-GUIDE.md#day-1-afternoon--terminal-21-asok)
 - *Hotel restaurant:* if energy collapsing. ~250 THB pp.
 - *Soi 11 Khao Man Gai stall:* not halal-certified but separates chicken/rice cleanly. ~60 THB. **Use only if J6 going alone.**
 
@@ -139,7 +143,7 @@ Dessert: any Lebanese sweet shop on Soi 3 — knafeh, baklava — ~80–150 THB.
 **Transport:** Walk 5 min from hotel.
 
 **Alternatives & when to use:**
-- *Jodd Fairs Ratchada night market:* outdoor, **non-halal heavy** (volcano ribs = pork). Skip Day 1 — energy too low. Better Day 2 if needed.
+- *Jodd Fairs Ratchada night market:* outdoor, **non-halal heavy** (volcano ribs = pork). Skip Day 1 — energy too low. Better Day 2 if needed. 📖 [Jodd Fairs guide](./SHOPPING-GUIDE.md#day-1-evening--jodd-fairs-ratchada-night-market) — full halal stall list, food order, clothing.
   - **If you do go with Ferina:** halal stalls are scattered. Look for **Madam Luck** (halal Thai) or stalls with green halal stickers. Mango sticky rice, fresh seafood (grilled fish/prawns), Korean fried chicken (some stalls halal-marked), Thai fruit smoothies are safe defaults. **Avoid:** Leng Zabb volcano ribs, moo ping skewers, pork knuckle stalls.
 - *ICONSIAM SookSiam:* if she wants the indoor-floating-market experience already. But Day 2 evening covers it.
 - *Hotel room delivery via Grab Food:* if both crashing. Halal Thai 200–300 THB pp.
@@ -278,6 +282,7 @@ Tell the therapist your pressure preference before they start. **For her:** requ
 - Plus-size mall, dedicated AC, 4 floors, sizes up to 5XL–7XL
 - BTS Phrom Phong / Chidlom + 8 min walk, or Grab from Wat Pho area ~25 min 150 THB
 - Tops 200–500 THB, dresses 300–700, linen sets 500–900 THB
+- 📖 [Krungthong Plaza full floor guide](./SHOPPING-GUIDE.md#day-2--krungthong-plaza-ferinas-plus-size-priority-stop) — Fat Boys (men's plus), Muenfun, No's Bra, kaftans, J6's stop too
 
 **Option B — Hotel rest** (default if Day 2 morning drained you)
 - Shower, charge phones, lie down 60 min
@@ -286,7 +291,7 @@ Tell the therapist your pressure preference before they start. **For her:** requ
 **Why this isn't "mandatory rest" anymore:** the 14:30–16:00 window is rain-prob heavy but actual precipitation is light drizzle. AC mall is fine. You only need physical rest if energy is genuinely low, not because of weather.
 
 **Alternatives & when to use:**
-- *Platinum Fashion Mall (Pratunam):* bigger, 2,000 stalls, F3–F4 plus-size. **Use instead of Krungthong if you want max selection.**
+- *Platinum Fashion Mall (Pratunam):* bigger, 2,000 stalls, F3–F4 plus-size. **Use instead of Krungthong if you want max selection.** 📖 [Platinum guide](./SHOPPING-GUIDE.md#day-23-storm-alt--platinum-fashion-mall-pratunam)
 - *Hotel pool / rooftop:* if rain clears and you want a quiet 30 min.
 - *Push to Wat Arun early:* **don't** — sky overcast, photos flat, and the 16:30 golden hour is the actual reward.
 
@@ -348,6 +353,8 @@ Tell the therapist your pressure preference before they start. **For her:** requ
 - **ICONCRAFT (4–5F)** — quality Thai handicrafts, ceramics, handmade goods.
 - **THANN / Karmakamet** — premium Thai spa products. Good gifts.
 - **ICONLUXE (1F)** — luxury brands, just window-shop.
+
+📖 [ICONSIAM/SookSiam full guide](./SHOPPING-GUIDE.md#day-2-evening--iconsiam--sooksiam) — silk scarves, Benjarong, kratip rattan, herbal balms, Mudmee fabric, complete halal food list inside SookSiam.
 
 **Alternatives & when to use:**
 - *Jodd Fairs Ratchada* (outdoor night market): **non-halal heavy** (volcano ribs = pork ribs). Use only if J6 going solo, or if you specifically want the night market vibe and willing to share food selectively. Mango sticky rice + grilled seafood are halal-friendly there.
@@ -411,6 +418,8 @@ Tell the therapist your pressure preference before they start. **For her:** requ
 - **Section 7: art, paintings, ceramics** — unique pieces, local artists. Good for souvenirs.
 - **Section 10–12: home decor, wood handicrafts, antiques.** Lanterns, cushions, woodwork. 200–800 THB.
 - **Section 16 / Soi 24: Saman Islam** — **halal Thai**, biryani, beef noodle soup, pad Thai. ~80–150 THB pp. **Lunch here at 10:30** to avoid crowds.
+
+📖 [Chatuchak full route + section-by-section guide](./SHOPPING-GUIDE.md#day-3-morning--chatuchak-weekend-market-jj-market) — bargaining rules, what's in each section, art prints, jewellery, halal food, coconut ice cream.
 - **Section 26: handmade Thai jewellery** — silver rings, resin pieces. 200–600 THB.
 
 **Coconut ice cream in coconut shell:** 70 THB. **Eat on the spot.** Halal-friendly.
@@ -421,8 +430,8 @@ Tell the therapist your pressure preference before they start. **For her:** requ
 - If you see something you like, **buy it now** — you won't find the stall again.
 
 **Alternatives & when to use:**
-- *Platinum Fashion Mall (Pratunam):* indoor AC, plus-size women F3–F4 up to 6XL, linen wholesale 200–600 THB. **Use if heavy rain at 09:00 OR Ferina shopping > sightseeing.** BTS Mo Chit → Chitlom (12 min, 32 THB) → walk 10 min.
-- *Krungthong Plaza:* dedicated plus-size, AC. Same option as Day 2 alt. **Use if Platinum already done.**
+- *Platinum Fashion Mall (Pratunam):* indoor AC, plus-size women F3–F4 up to 6XL, linen wholesale 200–600 THB. **Use if heavy rain at 09:00 OR Ferina shopping > sightseeing.** BTS Mo Chit → Chitlom (12 min, 32 THB) → walk 10 min. 📖 [Platinum guide](./SHOPPING-GUIDE.md#day-23-storm-alt--platinum-fashion-mall-pratunam)
+- *Krungthong Plaza:* dedicated plus-size, AC. Same option as Day 2 alt. **Use if Platinum already done.** 📖 [Krungthong guide](./SHOPPING-GUIDE.md#day-2--krungthong-plaza-ferinas-plus-size-priority-stop)
 - *MIXT Chatuchak (covered AC mall right next to market):* halal food court inside, prayer room, AC. **Use as rain bunker if storm hits during market visit.**
 
 ---
@@ -449,11 +458,14 @@ Tell the therapist your pressure preference before they start. **For her:** requ
    - **Uniqlo** — linen blend shirts 790 THB, AIRism cotton tee 390 THB, smart linen pants 990 THB. **Sizes to 3XL/4XL men, 3XL women** — fits both of you. Cheaper than KL.
    - **Jim Thompson silk** — premium Thai cotton/silk. Cotton shirts 1,500–2,500 THB. One special piece each.
    - **Beauty hall** — Thai cosmetics (Mistine, Snail White, Karmakamet) cheaper than airport.
+   - **Gourmet Market basement (B1)** — Thai curry paste sets, Cha Tra Mue tea, Doi Chaang coffee — best food gifts to bring back. VAT refund eligible if spend ≥ 2,000 THB.
+
+📖 [Siam Paragon full floor guide](./SHOPPING-GUIDE.md#day-3-afternoon--siam-paragon) — every floor mapped, Boots/Watson product recs, NaRaYa flagship details, Eveandboy cosmetics list, VAT refund process.
 
 **Time check:** by **13:50** start heading to BTS. Earlier is safer.
 
 **Alternatives & when to use:**
-- *MBK Center (Floor 6 — Dr Zu plus-size men):* **for J6 specifically.** Cotton/linen 300–800 THB up to XXL–4XL. Walk from Siam Paragon ~5 min covered walkway. **Use if J6 needs shirts and Uniqlo doesn't fit.**
+- *MBK Center (Floor 6 — Dr Zu plus-size men):* **for J6 specifically.** Cotton/linen 300–800 THB up to XXL–4XL. Walk from Siam Paragon ~5 min covered walkway. **Use if J6 needs shirts and Uniqlo doesn't fit.** 📖 [MBK guide](./SHOPPING-GUIDE.md#day-3-siam-alt--mbk-center) — Dr Zu, Tops supermarket, F4 souvenirs.
 - *Jim Thompson House museum (10 min walk from Siam Paragon, BTS National Stadium):* 250 THB pp, traditional Thai house + silk story. AC garden, calm. **Use if shopping done and you want one cultural moment before leaving.** Skip if tight on time.
 - *CentralWorld (next to Siam Paragon):* larger food hall, more brands. **Use if Siam Paragon too crowded.**
 
