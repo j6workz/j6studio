@@ -10,6 +10,8 @@ import {
   setCurrentDay, setGps
 } from './state.js';
 import { onAuth, signIn, signOut, subscribeState, writeState } from './firebase.js';
+import { renderShoppingContent } from './shopping-render.js';
+import { anchorById } from './data/anchors.js';
 
 const $ = sel => document.querySelector(sel);
 const timeline = $('#timeline');
@@ -21,6 +23,9 @@ const nowWhatToggle = $('#nowwhat-toggle');
 const nearbyDialog = $('#nearby');
 const nearbyList = $('#nearby-list');
 const areaPicker = $('#area-picker');
+const shoppingModal = $('#shopping-modal');
+const shoppingBody = $('#shopping-body');
+const shoppingTitle = $('#shopping-title');
 
 const swapState = new Map();
 
@@ -87,8 +92,19 @@ timeline.addEventListener('click', e => {
   } else if (action === 'storm-alt') {
     swapState.set(slotId, 'storm');
     rerender();
+  } else if (action === 'shopping') {
+    openShopping(btn.dataset.anchorId);
   }
 });
+
+function openShopping(anchorId) {
+  const a = anchorById(anchorId);
+  shoppingTitle.textContent = a ? `${a.emoji} ${a.name}` : 'Shopping guide';
+  replace(shoppingBody, ...renderShoppingContent(anchorId));
+  shoppingBody.scrollTop = 0;
+  shoppingModal.querySelector('[data-close]').onclick = () => shoppingModal.close();
+  shoppingModal.showModal();
+}
 
 nowWhatToggle.addEventListener('click', () => {
   const opening = nowWhatBody.hidden;
