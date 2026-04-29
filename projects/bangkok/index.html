@@ -1,0 +1,1646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bangkok — 30 Apr to 2 May 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F5F0E8;
+    --warm-white: #FDFAF5;
+    --charcoal: #1E1C18;
+    --mid: #5A5548;
+    --faint: #B8B0A0;
+    --gold: #C9A84C;
+    --gold-light: #F0DFA0;
+    --gold-pale: #FBF6E6;
+    --rust: #B85C38;
+    --teal: #2A7D6F;
+    --teal-light: #E6F5F2;
+    --sky: #3B7FB5;
+    --sky-light: #E6F1FA;
+    --border: #DDD8CC;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--charcoal);
+    line-height: 1.7;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HERO ────────────────────────────────── */
+  .hero {
+    background: var(--charcoal);
+    color: var(--warm-white);
+    padding: 80px 40px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 90% 50%, rgba(201,168,76,.13) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 10% 80%, rgba(42,125,111,.1) 0%, transparent 60%);
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero-kicker {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(42px, 7vw, 80px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -.01em;
+    margin-bottom: 20px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+  .hero-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,.65);
+    max-width: 520px;
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,.12);
+  }
+  .hstat { }
+  .hstat-label {
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .hstat-val {
+    font-family: var(--serif);
+    font-size: 17px;
+    color: var(--warm-white);
+    font-weight: 300;
+  }
+  .thai-pattern {
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    font-size: 80px;
+    opacity: .06;
+    font-family: serif;
+    user-select: none;
+    line-height: 1;
+  }
+
+  /* ── NAV ───────────────────────────────── */
+  .sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(245,240,232,.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+  }
+  .nav-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-inner::-webkit-scrollbar { display: none; }
+  .nav-link {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-decoration: none;
+    padding: 14px 18px;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all .2s;
+  }
+  .nav-link:hover, .nav-link.active { color: var(--charcoal); border-bottom-color: var(--gold); }
+
+  /* ── MAIN ──────────────────────────────── */
+  .main { max-width: 860px; margin: 0 auto; padding: 0 40px 80px; }
+
+  /* ── SECTION HEADERS ───────────────────── */
+  .section-head {
+    padding: 60px 0 8px;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .section-head:first-of-type { border-top: none; margin-top: 48px; }
+  .section-num {
+    font-family: var(--serif);
+    font-size: 11px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-style: italic;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: -.01em;
+    color: var(--charcoal);
+  }
+  .section-date {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-left: auto;
+  }
+  .section-weather {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+    padding: 12px 18px;
+    background: var(--warm-white);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--mid);
+    flex-wrap: wrap;
+  }
+  .weather-temp { font-weight: 500; color: var(--rust); }
+  .weather-pill {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .04em;
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+  .pill-warn { background: #FEF3E2; color: #B25E0A; }
+  .pill-ok   { background: #E6F5F2; color: #2A7D6F; }
+
+  /* ── TIMELINE ──────────────────────────── */
+  .timeline { position: relative; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 88px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .tl-block {
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    gap: 0 24px;
+    margin-bottom: 4px;
+  }
+  .tl-time {
+    text-align: right;
+    padding-top: 20px;
+    font-family: var(--serif);
+    font-size: 13px;
+    color: var(--faint);
+    font-style: italic;
+    white-space: nowrap;
+    line-height: 1.3;
+  }
+  .tl-time .period { font-size: 10px; display: block; letter-spacing: .06em; text-transform: uppercase; }
+
+  .tl-right {
+    padding-left: 24px;
+    padding-bottom: 28px;
+    position: relative;
+  }
+  .tl-right::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 26px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--cream);
+    border: 2px solid var(--border);
+  }
+
+  .tl-block.type-temple   .tl-right::before { border-color: var(--teal);  background: var(--teal-light); }
+  .tl-block.type-food     .tl-right::before { border-color: var(--gold);  background: var(--gold-pale); }
+  .tl-block.type-shop     .tl-right::before { border-color: #8B5E9E;      background: #F5EEF8; }
+  .tl-block.type-travel   .tl-right::before { border-color: var(--sky);   background: var(--sky-light); }
+  .tl-block.type-rest     .tl-right::before { border-color: var(--faint); background: var(--warm-white); }
+  .tl-block.type-spa      .tl-right::before { border-color: var(--rust);  background: #FDF0EB; }
+  .tl-block.type-market   .tl-right::before { border-color: #E07B39;      background: #FEF4EC; }
+
+  .tl-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 22px;
+    transition: box-shadow .2s;
+  }
+  .tl-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,.06); }
+
+  .tl-block.type-temple   .tl-card { border-left: 3px solid var(--teal); }
+  .tl-block.type-food     .tl-card { border-left: 3px solid var(--gold); }
+  .tl-block.type-shop     .tl-card { border-left: 3px solid #8B5E9E; }
+  .tl-block.type-travel   .tl-card { border-left: 3px solid var(--sky); }
+  .tl-block.type-rest     .tl-card { border-left: 3px solid var(--faint); }
+  .tl-block.type-spa      .tl-card { border-left: 3px solid var(--rust); }
+  .tl-block.type-market   .tl-card { border-left: 3px solid #E07B39; }
+
+  .tl-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .tl-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .tl-title {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
+    flex: 1;
+  }
+  .tl-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-left: auto; }
+  .tl-tag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 20px;
+  }
+  .tag-cost    { background: var(--gold-pale); color: #8A6A10; }
+  .tag-temple  { background: var(--teal-light); color: var(--teal); }
+  .tag-shop    { background: #F5EEF8; color: #6A3D8E; }
+  .tag-food    { background: #FEF4EC; color: #9A4A15; }
+  .tag-free    { background: #EAF6EE; color: #2A7D3F; }
+
+  .tl-body { font-size: 14px; color: var(--mid); line-height: 1.7; }
+  .tl-body p { margin-bottom: 8px; }
+  .tl-body p:last-child { margin-bottom: 0; }
+
+  /* transport strip */
+  .transport-strip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: var(--sky-light);
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--sky);
+    font-weight: 500;
+    flex-wrap: wrap;
+  }
+  .transport-strip .t-icon { font-size: 15px; }
+  .transport-strip .t-route { font-weight: 400; color: #2A5070; flex: 1; }
+  .transport-strip .t-cost  { font-size: 12px; color: var(--mid); }
+
+  /* buy box */
+  .buy-box {
+    margin-top: 12px;
+    padding: 12px 14px;
+    background: var(--gold-pale);
+    border-radius: 8px;
+    border-left: 3px solid var(--gold);
+  }
+  .buy-box-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .buy-list {
+    list-style: none;
+    font-size: 13px;
+    color: #6A5010;
+    line-height: 1.8;
+  }
+  .buy-list li::before { content: '→ '; color: var(--gold); font-weight: 500; }
+
+  /* tip box */
+  .tip-box {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: #FEF3E2;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #7A4A0A;
+    border-left: 3px solid #E07B39;
+  }
+  .tip-box strong { font-weight: 500; }
+
+  /* ── GROOMING SECTION ──────────────────── */
+  .grooming-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  @media (max-width: 620px) { .grooming-grid { grid-template-columns: 1fr; } }
+
+  .grm-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px;
+  }
+  .grm-card.featured {
+    border-color: var(--rust);
+    border-width: 1.5px;
+  }
+  .grm-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 8px;
+  }
+  .grm-name {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .grm-sub { font-size: 13px; color: var(--mid); margin-bottom: 14px; line-height: 1.5; }
+  .grm-detail { font-size: 13px; color: var(--mid); line-height: 1.8; }
+  .grm-detail strong { color: var(--charcoal); font-weight: 500; }
+  .grm-price {
+    display: inline-block;
+    margin-top: 12px;
+    background: var(--gold-pale);
+    color: #7A5A10;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+
+  /* ── WHAT TO BUY ───────────────────────── */
+  .buy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .buy-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .buy-card-icon { font-size: 24px; margin-bottom: 10px; display: block; }
+  .buy-card-place {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .buy-card-title {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .buy-card-list {
+    list-style: none;
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.9;
+  }
+  .buy-card-list li { padding-left: 14px; position: relative; }
+  .buy-card-list li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  /* ── BUDGET TABLE ──────────────────────── */
+  .budget-wrap {
+    margin-top: 24px;
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .budget-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    padding: 14px 22px;
+    border-bottom: 1px solid var(--border);
+    align-items: center;
+    font-size: 14px;
+  }
+  .budget-row:last-child { border-bottom: none; }
+  .budget-row.header {
+    background: var(--charcoal);
+    color: var(--warm-white);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 10px 22px;
+  }
+  .budget-row.total {
+    background: var(--gold-pale);
+    font-weight: 500;
+  }
+  .budget-item { color: var(--charcoal); }
+  .budget-item .note { font-size: 12px; color: var(--mid); margin-top: 2px; }
+  .budget-thb { font-family: var(--serif); font-size: 16px; color: var(--charcoal); text-align: right; white-space: nowrap; }
+  .budget-thb .myr { font-size: 11px; color: var(--faint); display: block; text-align: right; }
+  .budget-row.total .budget-thb { font-size: 20px; color: var(--rust); }
+
+  /* ── TIPS ──────────────────────────────── */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-top: 24px;
+  }
+  .tip-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .tip-card-icon { font-size: 22px; margin-bottom: 8px; display: block; }
+  .tip-card-title {
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .tip-card-body { font-size: 13px; color: var(--mid); line-height: 1.6; }
+
+  /* ── FLIGHT BOX ────────────────────────── */
+  .flight-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+    background: var(--charcoal);
+    color: var(--warm-white);
+    border-radius: 12px;
+    padding: 22px 26px;
+    flex-wrap: wrap;
+  }
+  .flight-rec {
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .flight-num {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 300;
+  }
+  .flight-details { flex: 1; min-width: 160px; }
+  .flight-route {
+    font-size: 14px;
+    color: rgba(255,255,255,.65);
+    margin-top: 4px;
+  }
+  .flight-why {
+    font-size: 13px;
+    color: rgba(255,255,255,.5);
+    max-width: 300px;
+    line-height: 1.5;
+  }
+  .flight-badge {
+    background: var(--gold);
+    color: var(--charcoal);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 5px 14px;
+    border-radius: 20px;
+    letter-spacing: .04em;
+    white-space: nowrap;
+  }
+
+  /* ── FOOTER ────────────────────────────── */
+  footer {
+    background: var(--charcoal);
+    color: rgba(255,255,255,.4);
+    text-align: center;
+    padding: 24px 40px;
+    font-size: 12px;
+    letter-spacing: .04em;
+  }
+  footer span { color: var(--gold); }
+
+  /* ── RESPONSIVE ────────────────────────── */
+  @media (max-width: 600px) {
+    .hero { padding: 60px 20px 40px; }
+    .main { padding: 0 20px 60px; }
+    .sticky-nav { padding: 0 20px; }
+    .hero-stats { gap: 20px; }
+    .timeline::before { left: 56px; }
+    .tl-block { grid-template-columns: 56px 1fr; }
+    .tl-time { font-size: 11px; padding-top: 22px; }
+    .thai-pattern { font-size: 50px; right: 20px; }
+  }
+
+  /* ── PRINT ─────────────────────────────── */
+  @media print {
+    .sticky-nav { display: none; }
+    .tl-card { box-shadow: none !important; break-inside: avoid; }
+  }
+
+  /* legend */
+  .legend {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+    padding: 14px 18px;
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 12px;
+    color: var(--mid);
+  }
+  .leg-item { display: flex; align-items: center; gap: 6px; }
+  .leg-dot  { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+  a { color: var(--sky); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .inline-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 12px;
+    vertical-align: middle;
+  }
+  .badge-warning { background: #FEF3E2; color: #9A5E0A; }
+  .badge-info    { background: var(--sky-light); color: #1A4F7A; }
+
+  hr.thin { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="thai-pattern">🏯</div>
+  <div class="hero-inner">
+    <p class="hero-kicker">Private trip · Bangkok · Two pax</p>
+    <h1>Three days in<br><em>Bangkok</em></h1>
+    <p class="hero-sub">Temples, night markets, shopping, grooming & good food — a detailed itinerary built around the heat, the budget, and what matters most.</p>
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="hstat-label">Dates</div>
+        <div class="hstat-val">30 Apr – 2 May 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-label">Stay</div>
+        <div class="hstat-val">lyf Sukhumvit 8 · 2 nights</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-label">Return flight</div>
+        <div class="hstat-val">AK 893 · 18:45 BKK</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-label">Budget</div>
+        <div class="hstat-val">~18,000 THB total</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-label">Weather</div>
+        <div class="hstat-val">35°C · Outdoor mornings only</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STICKY NAV -->
+<nav class="sticky-nav">
+  <div class="nav-inner">
+    <a href="#day1" class="nav-link">Day 1 · Thu</a>
+    <a href="#day2" class="nav-link">Day 2 · Fri</a>
+    <a href="#day3" class="nav-link">Day 3 · Sat</a>
+    <a href="#grooming" class="nav-link">Grooming</a>
+    <a href="#buy" class="nav-link">What to Buy</a>
+    <a href="#budget" class="nav-link">Budget</a>
+    <a href="#tips" class="nav-link">Tips</a>
+  </div>
+</nav>
+
+<main class="main">
+
+  <!-- ═══════════════════════════════════════
+       FLIGHT RECOMMENDATION
+  ════════════════════════════════════════ -->
+  <div class="section-head" style="margin-top:48px; border-top:none;">
+    <span class="section-num">Before you go</span>
+    <h2 class="section-title">Return flight</h2>
+  </div>
+  <div class="flight-box">
+    <div class="flight-details">
+      <div class="flight-rec">Recommended</div>
+      <div class="flight-num">AK 893</div>
+      <div class="flight-route">Bangkok (DMK) → Kuala Lumpur (KLIA2) · 18:45 departure · arrives KL ~22:00</div>
+    </div>
+    <div class="flight-why">Gives you a full Chatuchak morning, Siam mall afternoon, and time to collect bags — without getting home past midnight. Best balance of day coverage and reasonable arrival.</div>
+    <div class="flight-badge">Best pick ✓</div>
+  </div>
+  <p style="font-size:13px;color:var(--mid);margin-top:12px;">Airport check-in: arrive Suvarnabhumi by <strong>16:30 at latest</strong>. Leave hotel by <strong>15:30–15:45</strong>. Grab from Sukhumvit: ~45–55 min, 350–500 THB.</p>
+
+  <!-- ═══════════════════════════════════════
+       DAY 1
+  ════════════════════════════════════════ -->
+  <div id="day1" class="section-head">
+    <span class="section-num">Day One</span>
+    <h2 class="section-title">Arrive. Rest. Ease in.</h2>
+    <span class="section-date">Thursday, 30 April</span>
+  </div>
+
+  <div class="section-weather">
+    <span class="weather-temp">35°C</span>
+    <span class="weather-pill pill-warn">40% rain chance</span>
+    <span>Sleep-deprived day — protect the morning. Outdoor exposure only after 5 PM.</span>
+  </div>
+
+  <div class="legend">
+    <div class="leg-item"><div class="leg-dot" style="background:var(--teal)"></div> Temple</div>
+    <div class="leg-item"><div class="leg-dot" style="background:var(--gold)"></div> Food</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#8B5E9E"></div> Shopping</div>
+    <div class="leg-item"><div class="leg-dot" style="background:var(--sky)"></div> Travel</div>
+    <div class="leg-item"><div class="leg-dot" style="background:var(--faint)"></div> Rest</div>
+    <div class="leg-item"><div class="leg-dot" style="background:var(--rust)"></div> Grooming / Spa</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#E07B39"></div> Night market</div>
+  </div>
+
+  <div class="timeline">
+
+    <div class="tl-block type-travel">
+      <div class="tl-time">~7:00 AM <span class="period">Bangkok time</span></div>
+      <div class="tl-right">
+        <div class="tl-card">
+          <div class="tl-head">
+            <span class="tl-icon">✈️</span>
+            <span class="tl-title">Land at Suvarnabhumi (BKK)</span>
+            <div class="tl-tags"><span class="tl-tag tag-cost">400–500 THB Grab</span></div>
+          </div>
+          <div class="tl-body">
+            <p>Clear immigration, collect bags. Head straight outside to the <strong>Grab pick-up zone</strong> (Ground floor, Arrivals). Don't bother with the Airport Rail Link today — you have luggage, you're exhausted, and Grab is door-to-door.</p>
+            <p>Estimated Grab fare to lyf Sukhumvit 8: <strong>400–500 THB, ~45–55 min</strong>. Book in the Grab app before stepping outside to avoid touts.</p>
+          </div>
+          <div class="transport-strip">
+            <span class="t-icon">🚗</span>
+            <span><strong>Grab car</strong></span>
+            <span class="t-route">Suvarnabhumi → lyf Sukhumvit 8, Soi Sukhumvit 8</span>
+            <span class="t-cost">400–500 THB · ~50 min</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block type-rest">
+      <div class="tl-time">~8:30 AM</div>
+      <div class="tl-right">
+        <div class="tl-card">
+          <div class="tl-head">
+            <span class="tl-icon">🛏</span>
+            <span class="tl-title">Check in — lyf Sukhumvit 8</span>
+          </div>
+          <div class="tl-body">
+            <p>Room may not be ready yet — that's fine. Drop bags with the front desk, freshen up in the lobby. The lyf has a communal cowork + lounge area on the ground floor — use it to decompress for 30 minutes.</p>
+            <p><strong>If room is ready early:</strong> Sleep for 3–4 hours. Non-negotiable. You've been awake since 3 AM KL time. Running temples on zero sleep in 35°C heat will break the trip on day one.</p>
+            <p><strong>If room isn't ready:</strong> Ask front desk to call you when it's ready. Rest in the lobby lounge. Don't wander out yet — heat peaks noon–3 PM.</p>
+          </div>
+          <div class="tip-box"><strong>Pro tip:</strong> Call/email lyf Sukhumvit 8 a day before to request early check-in. They often accommodate it for free when rooms are available.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block type-food">
+      <div class="tl-time">12:30 PM</div>
+      <div class="tl-right">
+        <div class="tl-card">
+          <div class="tl-head">
+            <span class="tl-icon">🍜</span>
+            <span class="tl-title">Lunch — Sukhumvit Soi 11 area</span>
+            <div class="tl-tags"><span class="tl-tag tag-food">80–150 THB/person</span></div>
+          </div>
+          <div class="tl-body">
+            <p>Walk out of the hotel and turn onto Sukhumvit Soi 11. It's lined with local Thai spots. <strong>Look for:</strong> Khao Man Gai (steamed chicken rice, ~60 THB), Pad See Ew (~80 THB), or any Thai eatery with locals eating in it.</p>
+            <p>Drink at least 2 bottles of water here. Bangkok heat + jet lag dehydration is a real thing.</p>
+          </div>
+          <div class="transport-strip">
+            <span class="t-icon">🚶</span>
+            <span><strong>Walk</strong></span>
+            <span class="t-route">Hotel → Soi 11, ~2–3 min on foot</span>
+            <span class="t-cost">Free</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block type-shop">
+      <div class="tl-time">2:00 PM</div>
+      <div class="tl-right">
+        <div class="tl-card">
+          <div class="tl-head">
+            <span class="tl-icon">🏬</span>
+            <span class="tl-title">Terminal 21 Asok — first taste of Bangkok shopping</span>
+            <div class="tl-tags"><span class="tl-tag tag-shop">10 AM–10 PM</span></div>
+          </div>
+          <div class="tl-body">
+            <p>Take BTS from <strong>Nana station</strong> (5-min walk from hotel) two stops to <strong>Asok BTS station</strong>. Terminal 21 is connected directly to the station — no outdoor walking needed, full air-con the moment you step in. Perfect for the hottest part of the day.</p>
+            <p>Each floor is themed as a different world city: Rome (G floor), Tokyo (2F), London (3F), Istanbul (4F), San Francisco (5F). The <strong>Pier 21 Food Court</strong> on the 5th floor basement (or top floor depending on the branch) serves authentic Thai food at local prices — Pad Thai from 50 THB.</p>
+          </div>
+          <div class="buy-box">
+            <div class="buy-box-label">What to buy here</div>
+            <ul class="buy-list">
+              <li>Thai cosmetics &amp; skincare — cheaper than KL (Mistine, Snail White, Pond's Thai editions)</li>
+              <li>Local fashion brands — reasonably priced, good for casual wear</li>
+              <li>Accessories &amp; bags — local brands, 200–500 THB</li>
+              <li>Phone accessories &amp; gadgets — various floors</li>
+              <li>Supermarket in basement — good for snacks to take home</li>
+            </ul>
+          </div>
+          <div class="transport-strip">
+            <span class="t-icon">🚈</span>
+            <span><strong>BTS Skytrain</strong></span>
+            <span class="t-route">Nana → Asok (2 stops, Sukhumvit Line, ~5 min)</span>
+            <span class="t-cost">~16 THB each way</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block type-spa">
+      <div class="tl-time">3:30 PM</div>
+      <div class="tl-right">
+        <div class="tl-card">
+          <div class="tl-head">
+            <span class="tl-icon">✂️</span>
+            <span class="tl-title">Grooming — MOGA Hair Salon (GF) + Barber (J6)</span>
+            <div class="tl-tags"><span class="tl-tag tag-cost">GF: ~1,500–2,500 THB · J6: ~200 THB</span></div>
+          </div>
+          <div class="tl-body">
+            <p><strong>For her — MOGA Hair Salon, Asoke Tower (Sukhumvit 21):</strong> Walk or short Grab from Terminal 21 (both are at the Asok junction). MOGA is a 30+ year Japanese-style salon that explicitly specialises in <em>thinning hair treatments</em> using Aveda products. Their stylists do a full consultation first — face shape, lifestyle, hair condition — before touching scissors. Let the stylist recommend what suits her best.</p>
+            <p>Book in advance: <strong>+66 2 xxx xxxx</strong> (call or Line them). Ask for the consultation package that covers cut + treatment for fine/thinning hair.</p>
+            <p><strong>For J6 — Barber near Nana/Asok:</strong> Dozens of men's grooming shops on Sukhumvit Soi 3–8. Ask hotel front desk for the nearest one. Beard trim typically <strong>150–250 THB</strong>. Takes 20–30 min. Book a separate appointment or walk in while she's at MOGA.</p>
+            <p>Duration: Allow 1.5–2 hours for her hair. You can finish your beard trim and meet her after.</p>
+          </div>
+          <div class="transport-strip">
+            <span class="t-icon">🚶</span>
+            <span><strong>Walk or short Grab</strong></span>
+            <span class="t-route">Terminal 21 → Asoke Tower (MOGA) → ~5–10 min</span>
+            <span class="t-cost">Walk or ~50 THB Grab</span>
+          </div>
+          <div class="tip-box"><strong>Book ahead:</strong> MOGA fills up, especially on weekdays when locals come. Book via Line app a day or two before. Ask specifically for a stylist experienced with fine or thinning hair. MOGA's consultation is thorough — she'll leave with a style that actually works for her hair type.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block type-market">
+      <div class="tl-time">5:45 PM</div>
+      <div class="tl-right">
+        <div class="tl-card">
+          <div class="tl-head">
+            <span class="tl-icon">🌙</span>
+            <span class="tl-title">Jodd Fairs Ratchada — Bangkok's best daily night market</span>
+            <div class="tl-tags"><span class="tl-tag tag-free">Free entry</span><span class="tl-tag tag-food">Open daily 5 PM–1 AM</span></div>
+          </div>
+          <div class="tl-body">
+            <p>From Asok, take the <strong>MRT Blue Line</strong> from Sukhumvit MRT station (underground, directly below Asok BTS) to <strong>Thailand Cultural Centre station</strong> — 2 stops, ~6 min. Take Exit 4 and walk 3 minutes to the market entrance.</p>
+            <p>Over 1,500 stalls — food, fashion, accessories, live music from 7–8 PM onwards. The atmosphere is lively and the crowd is young and local. Arrive by 6 PM for best food selection before it fills up.</p>
+            <p><strong>Must-try food:</strong> Leng Zabb volcano ribs (180 THB), grilled rainbow shellfish platters, mango sticky rice, fresh mango smoothies, pork skewers (moo ping) from 20 THB each. Korean fried chicken from the back section.</p>
+          </div>
+          <div class="buy-box">
+            <div class="buy-box-label">What to buy at Jodd Fairs</div>
+            <ul class="buy-list">
+              <li>Trendy tops, dresses, co-ords — 100–300 THB per item (negotiate)</li>
+              <li>Accessories: earrings, necklaces, rings — 50–200 THB</li>
+              <li>Handbags &amp; tote bags — 150–400 THB</li>
+              <li>Yadom (nasal inhalers) — 30–50 THB, cheaper here than pharmacies</li>
+              <li>Thai souvenirs: magnets, keychains, elephant figurines — 40–150 THB</li>
+              <li>Quirky phone cases &amp; accessories</li>
+            </ul>
+          </div>
+          <div class="transport-strip">
+            <span class="t-icon">🚇</span>
+            <span><strong>MRT Blue Line</strong></span>
+            <span class="t-route">Sukhumvit MRT → Thailand Cultural Centre (Exit 4) · 2 stops · ~6 min</span>
+            <span class="t-cost">~20 THB each way</span>
+          </div>
+          <div class="tip-box"><strong>Bargaining:</strong> Start at 60–70% of asking price. Smile, be friendly. Buy multiple items from one stall for better discount. Never haggle at food stalls — prices are fixed.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block type-rest">
+      <div class="tl-time">9:30 PM</div>
+      <div class="tl-right">
+        <div class="tl-card">
+          <div class="tl-head">
+            <span class="tl-icon">🏠</span>
+            <span class="tl-title">Back to hotel — early night</span>
+          </div>
+          <div class="tl-body">
+            <p>MRT back to Sukhumvit → BTS Nana → 5-min walk to hotel. Or grab a Grab (30–50 THB from MRT station). Aim to be in bed by 10:30 PM. Big temple day tomorrow — you need to be up at 7:30 AM rested.</p>
+          </div>
+          <div class="transport-strip">
+            <span class="t-icon">🚇</span>
+            <span><strong>MRT → BTS</strong></span>
+            <span class="t-route">Thailand Cultural Centre → Sukhumvit MRT → Nana BTS → hotel walk</span>
+            <span class="t-cost">~35 THB</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /timeline day1 -->
+
+  <!-- ═══════════════════════════════════════
+       DAY 2
+  ════════════════════════════════════════ -->
+  <div id="day2" class="section-head">
+    <span class="section-num">Day Two</span>
+    <h2 class="section-title">Temples. River. ICONSIAM.</h2>
+    <span class="section-date">Friday, 1 May — Labour Day</span>
+  </div>
+
+  <div class="section-weather">
+    <span class="weather-temp">35°C</span>
+    <span class="weather-pill pill-ok">25% rain chance — best weather day</span>
+    <span>Temples open as normal on Labour Day. Malls open. Hit the Grand Palace at opening time — non-negotiable.</span>
+  </div>
+
+  <div class="timeline">
+
+    <div class="tl-block type-food">
+      <div class="tl-time">7:30 AM</div>
+      <div class="tl-right">
+        <div class="tl-card">
+          <div class="tl-head">
+            <span class="tl-icon">☕</span>
+            <span class="tl-title">Breakfast — fuel up before temples</span>
+            <div class="tl-tags"><span class="tl-tag tag-food">50–120 THB</span></div>
+          </div>
+          <div class="tl-body">
+            <p>Eat at the hotel or walk to 7-Eleven nearby for quick bites (Thai onigiri, bread, milk). Or find a street breakfast stall — look for Khanom Krok (coconut rice pancakes) or Jok (rice porridge), both under 60 THB.</p>
+            <p>Pack a <strong>small bottle of water</strong> and a <strong>compact umbrella</strong> before leaving. The temple complex has minimal shade.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block type-travel">
+      <div class="tl-time">8:15 AM</div>
+      <div class="tl-right">
+        <div class="tl-card">
+          <div class="tl-head">
+            <span class="tl-icon">⛵</span>
+            <span class="tl-title">Head to Grand Palace — scenic river route</span>
+          </div>
+          <div class="tl-body">
+            <p>Take BTS from <strong>Nana</strong> to <strong>Saphan Taksin</strong> (end of Silom Line, ~6 stops, ~20 min). Exit at Saphan Taksin → walk to <strong>Sathorn Pier (Central Pier)</strong> — it's right there. Board the <strong>Chao Phraya Express Boat</strong> (orange flag) heading north to <strong>Tha Chang Pier (N9)</strong>. Ride takes ~25 min.</p>
+            <p>This river route is spectacular — you'll pass the skyline, temples, and get your first views of Wat Arun from the water. Much better than fighting traffic by taxi.</p>
+          </div>
+          <div class="transport-strip">
+            <span class="t-icon">🚈</span>
+            <span><strong>BTS + Chao Phraya Boat</strong></span>
+            <span class="t-route">Nana BTS → Saphan Taksin BTS → Sathorn Pier → Tha Chang Pier (N9)</span>
+            <span class="t-cost">BTS ~40 THB + Boat ~16 THB each · ~45 min total</span>
+          </div>
+          <div class="tip-box"><strong>Important:</strong> Only board the orange-flag boats (Chao Phraya Express Boat). Tourist boats charge 200 THB but the local orange flag boat is the same trip for 16 THB.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block type-temple">
+      <div class="tl-time">9:00 AM</div>
+      <div class="tl-right">
+        <div class="tl-card">
+          <div class="tl-head">
+            <span class="tl-icon">🏛</span>
+            <span class="tl-title">Grand Palace + Wat Phra Kaew (Emerald Buddha)</span>
+            <div class="tl-tags"><span class="tl-tag tag-temple">8:30 AM – 3:30 PM</span><span class="tl-tag tag-cost">500 THB/person</span></div>
+          </div>
+          <div class="tl-body">
+            <p>Walk 2 min from Tha Chang pier to the main gate. Tickets are 500 THB per person (cash or card at kiosk). <strong>Dress code is strict</strong> — both of you need covered shoulders and knees. Sarongs and cover-up skirts are available to borrow/rent at the gate.</p>
+            <p>Spend 1.5–2 hours here. The highlights:</p>
+            <p>• <strong>Wat Phra Kaew</strong> (Emerald Buddha temple) — the most sacred site. Remove shoes at the entrance. No photography inside. The jade Buddha statue is small but the gilded hall is extraordinary.<br>
+            • <strong>Chakri Maha Prasat Hall</strong> — the fusion European-Thai architecture.<br>
+            • <strong>Outer walls murals</strong> — 178 panels depicting the Ramakien epic. Walk the full length.<br>
+            • The golden <strong>Phra Si Rattana Chedi</strong> spire — unmissable for photos.</p>
+            <p>Carry your water. There are some shaded areas but the courtyard is largely exposed. Take breaks in the shade. Don't rush — this is the most important cultural site in Thailand.</p>
+          </div>
+          <div class="tip-box"><strong>Scam alert:</strong> If anyone outside the gate tells you it's closed today and offers to take you elsewhere — ignore them. The palace is open. Walk to the ticket window yourself.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block type-temple">
+      <div class="tl-time">11:00 AM</div>
+      <div class="tl-right">
+        <div class="tl-card">
+          <div class="tl-head">
+            <span class="tl-icon">🙏</span>
+            <span class="tl-title">Wat Pho — Reclining Buddha + Thai Massage</span>
+            <div class="tl-tags"><span class="tl-tag tag-temple">8 AM – 7:30 PM</span><span class="tl-tag tag-cost">300 THB entry · massage from 300 THB</span></div>
+          </div>
+          <div class="tl-body">
+            <p>5-minute walk south from the Grand Palace (just follow signs or crowds). Entry: 300 THB (includes a small bottle of water at the gate). Allow 1 hour to 1.5 hours.</p>
+            <p>The <strong>Reclining Buddha</strong> — 46m long, gold leaf, 15m high — is genuinely breathtaking in person. Walk around it fully. At the feet, you'll find 108 bronze bowls — drop a coin in each for good luck (bring small change).</p>
+            <p>Wat Pho is the <strong>birthplace of traditional Thai massage</strong> and home to the original school. <strong>Get a massage here</strong> — it's authentic, affordable, and your girlfriend will appreciate the pampering after a morning of walking in heat.</p>
+            <p>• Traditional Thai Massage: 30 min 300 THB · 1 hr 420 THB<br>
+            • Foot massage: 30 min 300 THB<br>
+            • No booking needed — walk into the massage building on the temple grounds.</p>
+          </div>
+          <div class="transport-strip">
+            <span class="t-icon">🚶</span>
+            <span><strong>Walk</strong></span>
+            <span class="t-route">Grand Palace exit → Wat Pho entrance · ~5 min, 600m</span>
+            <span class="t-cost">Free</span>
+          </div>
+          <div class="tip-box"><strong>For her:</strong> Request the foot massage + head/neck extension — wonderful for tense shoulders. Tell the therapist your pain/pressure preference before they start.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block type-temple">
+      <div class="tl-time">12:30 PM</div>
+      <div class="tl-right">
+        <div class="tl-card">
+          <div class="tl-head">
+            <span class="tl-icon">⛩️</span>
+            <span class="tl-title">Wat Arun — Temple of Dawn</span>
+            <div class="tl-tags"><span class="tl-tag tag-temple">8 AM – 6 PM</span><span class="tl-tag tag-cost">100 THB entry</span></div>
+          </div>
+          <div class="tl-body">
+            <p>Walk 10 minutes south from Wat Pho to <strong>Tha Tien Pier</strong>. The cross-river ferry is just 4 THB per person — runs constantly, 5-minute ride. You can see Wat Arun's iconic prang (spire) from the pier — stunning composition for photos from the boat.</p>
+            <p>Entry is 100 THB. Spend 45–60 minutes here. The porcelain-covered prang is the most intricate thing you'll see in Bangkok — every square inch is decorated with smashed Chinese porcelain in elaborate patterns. You can climb partway up the central tower for river views.</p>
+            <p>After Wat Arun, sit at one of the riverside cafes or restaurants with a cold drink and river view — you've earned it. This is the hottest part of the day. Don't rush back.</p>
+          </div>
+          <div class="transport-strip">
+            <span class="t-icon">⛵</span>
+            <span><strong>Cross-river ferry</strong></span>
+            <span class="t-route">Tha Tien Pier → Wat Arun pier · ~3 min</span>
+            <span class="t-cost">4 THB each way per person</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block type-food">
+      <div class="tl-time">2:00 PM</div>
+      <div class="tl-right">
+        <div class="tl-card">
+          <div class="tl-head">
+            <span class="tl-icon">🍛</span>
+            <span class="tl-title">Riverside lunch + taxi back to hotel</span>
+            <div class="tl-tags"><span class="tl-tag tag-food">150–300 THB/person</span></div>
+          </div>
+          <div class="tl-body">
+            <p>Eat at one of the open-air riverside restaurants near Wat Arun or Tha Tien area. Pad Thai, Tom Yum, grilled fish — all excellent here. Then Grab back to the hotel for 2 hours of rest. It's peak heat (35°C) — resting now means you have energy for ICONSIAM tonight.</p>
+          </div>
+          <div class="transport-strip">
+            <span class="t-icon">🚗</span>
+            <span><strong>Grab car</strong></span>
+            <span class="t-route">Wat Arun / Tha Tien area → lyf Sukhumvit 8</span>
+            <span class="t-cost">150–250 THB · ~30–40 min</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block type-rest">
+      <div class="tl-time">2:30 PM</div>
+      <div class="tl-right">
+        <div class="tl-card">
+          <div class="tl-head">
+            <span class="tl-icon">😮‍💨</span>
+            <span class="tl-title">Rest at hotel — mandatory midday pause</span>
+          </div>
+          <div class="tl-body">
+            <p>Shower, charge your phones, rest for 1.5–2 hours. You've walked kilometres in 35°C heat. This pause is what lets you enjoy ICONSIAM and the riverside evening properly without being wrecked.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block type-shop">
+      <div class="tl-time">5:00 PM</div>
+      <div class="tl-right">
+        <div class="tl-card">
+          <div class="tl-head">
+            <span class="tl-icon">🌊</span>
+            <span class="tl-title">ICONSIAM — riverside mega-mall + fountain show</span>
+            <div class="tl-tags"><span class="tl-tag tag-free">Free entry</span><span class="tl-tag tag-shop">10 AM – 10 PM</span></div>
+          </div>
+          <div class="tl-body">
+            <p>Take BTS from <strong>Nana → Saphan Taksin</strong> (same route as morning). At Sathorn Pier, take the <strong>free ICONSIAM shuttle boat</strong> — departs every 10 minutes, 5-minute ride. Walk right for ICONSIAM boat (walk left for Asiatique).</p>
+            <p><strong>What to see &amp; do inside:</strong></p>
+            <p>• <strong>SookSiam (Ground floor)</strong> — The indoor floating market recreating all 77 provinces of Thailand. Street food from 30–80 THB, Thai handicrafts, regional snacks, live cultural performances. This is the highlight of ICONSIAM — allow 45 minutes here alone.<br>
+            • <strong>ICONLUXE (1F)</strong> — Gucci, LV, Dior, Prada if browsing. Don't need to buy anything.<br>
+            • <strong>Apple Store</strong> — Thailand's first Apple Store, on the river terrace.<br>
+            • <strong>River terrace (6F)</strong> — panoramic views of Chao Phraya. Great for sunset photos.<br>
+            • <strong>Free fountain show</strong> — riverside, runs at <strong>7:00 PM, 8:00 PM, and 9:00 PM</strong>. The 7 PM show is the one to catch — 400m of multimedia fountain jets. Spectacular and completely free.</p>
+            <p>Have dinner in SookSiam food zone (budget-friendly) or one of the mid-range restaurants on upper floors.</p>
+          </div>
+          <div class="buy-box">
+            <div class="buy-box-label">What to buy at ICONSIAM</div>
+            <ul class="buy-list">
+              <li>SookSiam — regional Thai products, snacks, herbal products, silk items</li>
+              <li>ICONCRAFT (4F–5F) — quality Thai handicrafts, ceramics, handmade goods</li>
+              <li>Thai cosmetics — THANN, Karmakamet (premium Thai brands, good as gifts)</li>
+              <li>Thai silk scarves &amp; accessories — SookSiam vendors</li>
+              <li>Branded goods if on your list — prices are comparable to duty-free</li>
+            </ul>
+          </div>
+          <div class="transport-strip">
+            <span class="t-icon">🚈 → ⛵</span>
+            <span><strong>BTS + Free shuttle boat</strong></span>
+            <span class="t-route">Nana → Saphan Taksin BTS → Sathorn Pier → ICONSIAM boat · ~35 min</span>
+            <span class="t-cost">BTS ~40 THB · boat free</span>
+          </div>
+          <div class="tip-box"><strong>Fountain show tip:</strong> Watch from the riverside terrace outside (free) not from inside the mall. Get there by 6:45 PM for the 7 PM show — it fills up fast. Bring her here for the 7 PM show — it's genuinely spectacular and unexpected for a mall.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block type-rest">
+      <div class="tl-time">9:30 PM</div>
+      <div class="tl-right">
+        <div class="tl-card">
+          <div class="tl-head">
+            <span class="tl-icon">🌙</span>
+            <span class="tl-title">Return to hotel</span>
+          </div>
+          <div class="tl-body">
+            <p>Free shuttle boat back to Sathorn Pier → BTS Saphan Taksin → BTS Nana → hotel. Or Grab if you're tired of the BTS (~150–200 THB from Sathorn). Early night — Chatuchak starts at 9 AM tomorrow.</p>
+          </div>
+          <div class="transport-strip">
+            <span class="t-icon">⛵ → 🚈</span>
+            <span><strong>Boat + BTS</strong></span>
+            <span class="t-route">ICONSIAM → Sathorn Pier → BTS Saphan Taksin → Nana</span>
+            <span class="t-cost">~42 THB total</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /timeline day2 -->
+
+  <!-- ═══════════════════════════════════════
+       DAY 3
+  ════════════════════════════════════════ -->
+  <div id="day3" class="section-head">
+    <span class="section-num">Day Three</span>
+    <h2 class="section-title">Chatuchak. Siam. Fly home.</h2>
+    <span class="section-date">Saturday, 2 May — departure day</span>
+  </div>
+
+  <div class="section-weather">
+    <span class="weather-temp">34°C</span>
+    <span class="weather-pill pill-warn">40% rain chance</span>
+    <span>Return flight: AK 893 departs 18:45 · Be at airport by 16:30 · Leave hotel by 15:30.</span>
+  </div>
+
+  <div class="timeline">
+
+    <div class="tl-block type-food">
+      <div class="tl-time">7:45 AM</div>
+      <div class="tl-right">
+        <div class="tl-card">
+          <div class="tl-head">
+            <span class="tl-icon">🌅</span>
+            <span class="tl-title">Early breakfast + checkout</span>
+            <div class="tl-tags"><span class="tl-tag tag-food">80–120 THB</span></div>
+          </div>
+          <div class="tl-body">
+            <p>Check out and ask the hotel to <strong>store your bags</strong> until ~15:00. This is a standard service and should be free. Eat a proper breakfast — you'll walk a lot at Chatuchak. Pick up extra water at 7-Eleven. Wear your most comfortable walking shoes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block type-travel">
+      <div class="tl-time">8:45 AM</div>
+      <div class="tl-right">
+        <div class="tl-card">
+          <div class="tl-head">
+            <span class="tl-icon">🚈</span>
+            <span class="tl-title">BTS to Chatuchak — direct from Nana</span>
+          </div>
+          <div class="tl-body">
+            <p>BTS Sukhumvit Line from <strong>Nana → Mo Chit</strong> (northern terminus, end of line, ~30 min, ~44 THB). You don't need to change trains. Mo Chit station is directly at the Chatuchak market entrance. Follow the crowd.</p>
+          </div>
+          <div class="transport-strip">
+            <span class="t-icon">🚈</span>
+            <span><strong>BTS Skytrain</strong></span>
+            <span class="t-route">Nana → Mo Chit (direct, end of Sukhumvit Line) · ~30 min</span>
+            <span class="t-cost">~44 THB each way</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block type-market">
+      <div class="tl-time">9:00 AM</div>
+      <div class="tl-right">
+        <div class="tl-card">
+          <div class="tl-head">
+            <span class="tl-icon">🛍</span>
+            <span class="tl-title">Chatuchak Weekend Market — world's largest weekend market</span>
+            <div class="tl-tags"><span class="tl-tag tag-free">Free entry</span><span class="tl-tag tag-shop">Sat–Sun 9 AM – 6 PM</span></div>
+          </div>
+          <div class="tl-body">
+            <p>Over 15,000 stalls across 27 sections covering 35 acres. You need 3–4 hours minimum. <strong>Go early</strong> — before 11 AM the heat is manageable and crowds are lighter.</p>
+            <p><strong>Section guide (suggested route):</strong><br>
+            • <strong>Section 2–4:</strong> Women's clothing — the bulk of trendy fashion. This is where your girlfriend will spend most time. Prices: 150–400 THB per item. Negotiate everything.<br>
+            • <strong>Section 7:</strong> Art, paintings, ceramics — unique pieces, local artists.<br>
+            • <strong>Section 10–12:</strong> Home decor, wooden handicrafts, antiques. Good for unique souvenirs.<br>
+            • <strong>Section 14–16:</strong> Young fashion, streetwear, accessories.<br>
+            • <strong>Section 24–25:</strong> Food section. Stop here around 11–12 PM. Coconut ice cream in the coconut shell (70 THB) is unmissable.</p>
+            <p>The market has info counters, ATMs, and toilets inside. Bring enough cash — <strong>most stalls are cash only</strong>. Carry 3,000–4,000 THB in cash between you.</p>
+          </div>
+          <div class="buy-box">
+            <div class="buy-box-label">What to buy at Chatuchak — the best options</div>
+            <ul class="buy-list">
+              <li>Handmade Thai jewellery — silver rings, resin pieces, unique designs (Sec 26)</li>
+              <li>Vintage &amp; retro fashion — Sec 2–4, excellent finds for 150–300 THB</li>
+              <li>Dresses, skirts, two-piece sets — fashionable, affordable, Thai-sized cuts</li>
+              <li>Wooden keychains, carved figurines — unique Thai handicrafts</li>
+              <li>Thai ceramics &amp; pottery — good quality, packable sizes</li>
+              <li>Art prints &amp; paintings — affordable local art (Sec 7)</li>
+              <li>Elephant pants &amp; linen wear — iconic Thai market pieces</li>
+              <li>Dried herbs &amp; spice packets — great for taking home (curry pastes, etc.)</li>
+            </ul>
+          </div>
+          <div class="tip-box"><strong>Chatuchak tips:</strong> Download the Chatuchak map app (or find a printed map at the entrance info counter). It's easy to get lost — the map shows section numbers. Keep hydrated — buy coconut water from vendors every hour. If you see something you like, buy it there — you won't find the same stall again.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block type-food">
+      <div class="tl-time">12:30 PM</div>
+      <div class="tl-right">
+        <div class="tl-card">
+          <div class="tl-head">
+            <span class="tl-icon">🌴</span>
+            <span class="tl-title">Lunch + escape the heat — Siam area</span>
+            <div class="tl-tags"><span class="tl-tag tag-food">150–250 THB/person</span></div>
+          </div>
+          <div class="tl-body">
+            <p>Leave Chatuchak by 1 PM latest. Take BTS from Mo Chit back south to <strong>Siam station</strong> (~10 min, ~25 THB). Siam has major air-conditioned malls — perfect for the hottest part of the day.</p>
+            <p><strong>Siam Paragon food court</strong> (basement) — good quality Thai food, 100–200 THB per dish. Or <strong>CentralWorld food court</strong> — larger variety, same prices. Both are within 2 min walk of Siam BTS.</p>
+            <p>After lunch, browse these malls for 30–45 min. Good for last-minute gifts:</p>
+            <p>• <strong>Siam Paragon</strong> — premium Thai brands (Naraya bags, Jim Thompson silk), beauty, food hall.<br>
+            • <strong>CentralWorld</strong> — wider price range, all brands, huge food hall.<br>
+            • <strong>MBK Center</strong> (short BTS or walk) — phone accessories, budget fashion, souvenirs.</p>
+          </div>
+          <div class="transport-strip">
+            <span class="t-icon">🚈</span>
+            <span><strong>BTS</strong></span>
+            <span class="t-route">Mo Chit → Siam (direct, ~10 min)</span>
+            <span class="t-cost">~25 THB</span>
+          </div>
+          <div class="buy-box">
+            <div class="buy-box-label">Last-minute shopping at Siam</div>
+            <ul class="buy-list">
+              <li><strong>Naraya bags</strong> (Siam Paragon) — Thai brand, quality fabric bags, 300–800 THB, great gifts</li>
+              <li><strong>Jim Thompson silk</strong> — premium Thai silk products, souvenirs</li>
+              <li>Thai snack packs — airport prices are higher, buy here</li>
+              <li>Cosmetics — Siam Paragon beauty hall has good Thai brands cheaper than airport</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block type-rest">
+      <div class="tl-time">3:00 PM</div>
+      <div class="tl-right">
+        <div class="tl-card">
+          <div class="tl-head">
+            <span class="tl-icon">🧳</span>
+            <span class="tl-title">Collect bags from hotel + head to airport</span>
+          </div>
+          <div class="tl-body">
+            <p>BTS from Siam back to <strong>Nana</strong> (~15 min). Collect stored bags from lyf Sukhumvit 8 — freshen up quickly if needed. Book your Grab in advance (set 15:30 as pickup time). <strong>Do not Grab pool or motorbike with luggage.</strong></p>
+            <p><strong>Arrive at Suvarnabhumi by 16:30</strong> for the 18:45 AK 893 departure. Check in counters close ~1 hour before departure for AirAsia. Security and immigration for departures can take 20–40 min on a Saturday evening — allow buffer.</p>
+          </div>
+          <div class="transport-strip">
+            <span class="t-icon">🚈 + 🚗</span>
+            <span><strong>BTS + Grab</strong></span>
+            <span class="t-route">Siam → Nana BTS → collect bags → Grab to Suvarnabhumi</span>
+            <span class="t-cost">~BTS 25 THB + Grab 400–500 THB</span>
+          </div>
+          <div class="tip-box"><strong>Reminder:</strong> If travelling with shopping bags from Chatuchak, consider packing them into your check-in luggage at the hotel before heading to airport. Carrying 5 bags through BTS and then Grab is exhausting. Repack first.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-block type-travel">
+      <div class="tl-time">4:30 PM</div>
+      <div class="tl-right">
+        <div class="tl-card">
+          <div class="tl-head">
+            <span class="tl-icon">✈️</span>
+            <span class="tl-title">At Suvarnabhumi Airport — check in &amp; depart</span>
+          </div>
+          <div class="tl-body">
+            <p>Check in at AirAsia counter, clear immigration, browse duty-free if time allows. AK 893 departs <strong>18:45 Bangkok time</strong>. Arrives Kuala Lumpur (KLIA2) approximately <strong>22:00 KL time</strong>. Home by ~11 PM.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /timeline day3 -->
+
+  <hr class="thin">
+
+  <!-- ═══════════════════════════════════════
+       GROOMING
+  ════════════════════════════════════════ -->
+  <div id="grooming" class="section-head">
+    <span class="section-num">Grooming & Wellness</span>
+    <h2 class="section-title">Look good. Feel great.</h2>
+  </div>
+
+  <div class="grooming-grid">
+    <div class="grm-card featured">
+      <div class="grm-label">For her · Day 1, ~3:30 PM</div>
+      <div class="grm-name">MOGA Hair Salon</div>
+      <div class="grm-sub">Asoke Tower, Sukhumvit 21 — 5 min walk from Terminal 21. Japanese-style. 30+ years in Bangkok.</div>
+      <div class="grm-detail">
+        <strong>Why MOGA:</strong> Specifically experienced with fine and thinning hair — uses Aveda professional products. Stylists do a full face-shape, lifestyle, and hair-condition consultation before any scissors come out. They will recommend the style that suits her hair type, not just a generic tourist trim.<br><br>
+        <strong>What to ask for:</strong> "I have fine/thinning hair and want a consultation. Please recommend a cut and treatment that adds volume and suits my face shape." Stylists speak English.<br><br>
+        <strong>Expect:</strong> Cut + blow dry + treatment, ~1.5–2 hours. She'll walk out lighter, more confident, and with actual styling advice she can follow at home.<br><br>
+        <strong>Book ahead:</strong> Contact via Line app before the trip. Mention thinning hair so they assign the right stylist.
+      </div>
+      <span class="grm-price">~1,500–2,500 THB depending on services</span>
+    </div>
+
+    <div class="grm-card">
+      <div class="grm-label">Also consider · Head Spa</div>
+      <div class="grm-name">Siesta Head Spa</div>
+      <div class="grm-sub">Sukhumvit branch — specialises in scalp care for thinning hair with L'Occitane products.</div>
+      <div class="grm-detail">
+        An alternative or addition to MOGA. If she wants a <em>scalp treatment + massage</em> rather than a full restyle, Siesta's L'Occitane thinning hair programme is designed exactly for her needs. Combines scalp detox, serum treatment, and Thai head massage. Leaves hair feeling genuinely healthier, not just styled.<br><br>
+        Good to know: Can do MOGA for the cut on Day 1 and Siesta for a scalp treatment anytime — they complement each other.
+      </div>
+      <span class="grm-price">~1,200–2,000 THB</span>
+    </div>
+
+    <div class="grm-card">
+      <div class="grm-label">For J6 · Day 1, ~3:30 PM</div>
+      <div class="grm-name">Men's Barber — Nana/Asok area</div>
+      <div class="grm-sub">Dozens of options on Sukhumvit Soi 3–11. Walk-in, no booking needed.</div>
+      <div class="grm-detail">
+        While she's at MOGA (Asoke Tower), walk to any men's grooming shop on Sukhumvit between Soi 3 and Soi 11. Look for signage that says "men's grooming" or "barber." Thai barbers are skilled at beard and moustache shaping.<br><br>
+        Ask for: "Beard trim and shape please" — show a reference photo on your phone if needed. They'll understand. Most have a hot towel + straight razor finish included.<br><br>
+        Takes 20–30 minutes. You'll be done well before she is at MOGA.
+      </div>
+      <span class="grm-price">150–300 THB</span>
+    </div>
+
+    <div class="grm-card">
+      <div class="grm-label">Both · Day 2, ~2:30 PM</div>
+      <div class="grm-name">Thai Massage — Wat Pho + Hotel Area</div>
+      <div class="grm-sub">One massage at Wat Pho (Day 2 temples) + rest option near hotel.</div>
+      <div class="grm-detail">
+        <strong>At Wat Pho:</strong> After seeing the Reclining Buddha, get massages right on the temple grounds. Traditional Thai or foot massage. Walk-in, no booking. 30 min from 300 THB. Authentic, excellent value, historical setting.<br><br>
+        <strong>Near hotel:</strong> Any evening, dozens of massage shops within 5–10 min walk of lyf Sukhumvit 8. Look for <strong>Ruen-Nuad</strong> style parlours (local, clean, ~400–500 THB/hr). Better quality than the cheap tourist street shops but not hotel-spa prices.
+      </div>
+      <span class="grm-price">300–500 THB per person per session</span>
+    </div>
+  </div>
+
+  <hr class="thin">
+
+  <!-- ═══════════════════════════════════════
+       WHAT TO BUY
+  ════════════════════════════════════════ -->
+  <div id="buy" class="section-head">
+    <span class="section-num">Shopping guide</span>
+    <h2 class="section-title">What to buy and where</h2>
+  </div>
+
+  <div class="buy-grid">
+    <div class="buy-card">
+      <span class="buy-card-icon">🌙</span>
+      <div class="buy-card-place">Jodd Fairs · Day 1 evening</div>
+      <div class="buy-card-title">Night Market Finds</div>
+      <ul class="buy-card-list">
+        <li>Trendy tops &amp; dresses (100–250 THB)</li>
+        <li>Statement earrings &amp; rings (50–150 THB)</li>
+        <li>Fabric tote bags &amp; crossbodies (150–350 THB)</li>
+        <li>Yadom nasal inhalers (30–50 THB)</li>
+        <li>Keychains &amp; magnets (40–80 THB)</li>
+        <li>Cute phone cases (80–200 THB)</li>
+        <li>Grilled food to eat on the spot</li>
+      </ul>
+    </div>
+
+    <div class="buy-card">
+      <span class="buy-card-icon">🏬</span>
+      <div class="buy-card-place">Terminal 21 · Day 1 afternoon</div>
+      <div class="buy-card-title">Mall Essentials</div>
+      <ul class="buy-card-list">
+        <li>Thai cosmetics (Mistine, Snail White) cheaper here vs KL</li>
+        <li>Local fashion brands (200–600 THB)</li>
+        <li>Accessories — bags, sunglasses</li>
+        <li>Supermarket snacks for home</li>
+        <li>Money exchange here has decent rates</li>
+      </ul>
+    </div>
+
+    <div class="buy-card">
+      <span class="buy-card-icon">🛕</span>
+      <div class="buy-card-place">Temple area · Day 2 morning</div>
+      <div class="buy-card-title">Cultural Keepsakes</div>
+      <ul class="buy-card-list">
+        <li>Traditional Thai figurines (near Wat Pho exit)</li>
+        <li>Silk scarves — small, affordable near Grand Palace gate</li>
+        <li>Buddhist amulets &amp; medallions</li>
+        <li>Temple postcards &amp; art prints</li>
+        <li>Mini Reclining Buddha replicas</li>
+      </ul>
+    </div>
+
+    <div class="buy-card">
+      <span class="buy-card-icon">🏯</span>
+      <div class="buy-card-place">ICONSIAM SookSiam · Day 2 evening</div>
+      <div class="buy-card-title">Quality Thai Crafts</div>
+      <ul class="buy-card-list">
+        <li>Regional Thai snacks &amp; sweets (all 77 provinces)</li>
+        <li>Quality silk accessories — quality controlled</li>
+        <li>THANN or Karmakamet Thai spa products (gifts)</li>
+        <li>Premium Thai tea &amp; herb blends</li>
+        <li>Artisan ceramics &amp; lacquerware</li>
+      </ul>
+    </div>
+
+    <div class="buy-card">
+      <span class="buy-card-icon">🛍</span>
+      <div class="buy-card-place">Chatuchak · Day 3 morning</div>
+      <div class="buy-card-title">The Big Haul</div>
+      <ul class="buy-card-list">
+        <li>Vintage &amp; retro fashion (150–400 THB)</li>
+        <li>Handmade Thai jewellery (unique pieces)</li>
+        <li>Home decor: cushions, lanterns, woodwork</li>
+        <li>Elephant pants &amp; linen sets</li>
+        <li>Dried curry paste &amp; spice packs for home</li>
+        <li>Art prints from local artists (Sec 7)</li>
+        <li>Coconut ice cream (eat on spot, 70 THB)</li>
+      </ul>
+    </div>
+
+    <div class="buy-card">
+      <span class="buy-card-icon">💎</span>
+      <div class="buy-card-place">Siam Paragon · Day 3 afternoon</div>
+      <div class="buy-card-title">Last-Minute Quality</div>
+      <ul class="buy-card-list">
+        <li><strong>Naraya bags</strong> — iconic Thai brand, 300–800 THB, great gifts</li>
+        <li>Jim Thompson silk goods</li>
+        <li>Thai beauty brands at better prices than airport</li>
+        <li>Snack boxes to take home</li>
+        <li>Any skincare you forgot to buy earlier</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="thin">
+
+  <!-- ═══════════════════════════════════════
+       BUDGET
+  ════════════════════════════════════════ -->
+  <div id="budget" class="section-head">
+    <span class="section-num">Money</span>
+    <h2 class="section-title">Budget breakdown</h2>
+  </div>
+
+  <p style="font-size:14px;color:var(--mid);margin-bottom:20px;">Based on 2 people, 3 days / 2 nights. Excludes flights. Rate used: 1 THB ≈ RM 0.13 (1 MYR ≈ 7.7 THB).</p>
+
+  <div class="budget-wrap">
+    <div class="budget-row header">
+      <div>Item</div>
+      <div style="text-align:right">Cost (THB)</div>
+    </div>
+
+    <div class="budget-row">
+      <div class="budget-item">lyf Sukhumvit 8 · 2 nights
+        <div class="note">Estimated ~2,200–2,800 THB/night. Book direct for best rate.</div>
+      </div>
+      <div class="budget-thb">5,000<span class="myr">~RM 650</span></div>
+    </div>
+
+    <div class="budget-row">
+      <div class="budget-item">Airport transfers (Grab x2: arrival + departure)
+        <div class="note">400–500 THB each way, both pax sharing 1 car</div>
+      </div>
+      <div class="budget-thb">1,000<span class="myr">~RM 130</span></div>
+    </div>
+
+    <div class="budget-row">
+      <div class="budget-item">BTS / MRT — 3 days (Rabbit Card, both pax)
+        <div class="note">Load ~300 THB each. Top up as needed.</div>
+      </div>
+      <div class="budget-thb">600<span class="myr">~RM 78</span></div>
+    </div>
+
+    <div class="budget-row">
+      <div class="budget-item">Temple entry fees (both pax)
+        <div class="note">Grand Palace 500×2 + Wat Pho 300×2 + Wat Arun 100×2</div>
+      </div>
+      <div class="budget-thb">1,800<span class="myr">~RM 234</span></div>
+    </div>
+
+    <div class="budget-row">
+      <div class="budget-item">Food — 3 days (all meals, both pax)
+        <div class="note">Budget Thai meals 80–200 THB/person. Night market dinners ~300–400 THB both.</div>
+      </div>
+      <div class="budget-thb">3,500<span class="myr">~RM 455</span></div>
+    </div>
+
+    <div class="budget-row">
+      <div class="budget-item">MOGA Hair Salon (girlfriend) — cut + treatment
+        <div class="note">Japanese salon, fine/thinning hair specialist. Worth every baht.</div>
+      </div>
+      <div class="budget-thb">2,000<span class="myr">~RM 260</span></div>
+    </div>
+
+    <div class="budget-row">
+      <div class="budget-item">Beard trim for J6 + Thai massages (both, Wat Pho + 1 session near hotel)
+        <div class="note">Barber ~200 THB · Wat Pho massage 2×300 THB · Evening massage 2×450 THB</div>
+      </div>
+      <div class="budget-thb">1,700<span class="myr">~RM 221</span></div>
+    </div>
+
+    <div class="budget-row">
+      <div class="budget-item">Grab rides within Bangkok (2–3 short rides)
+        <div class="note">Day 2 return from temples, Day 3 Siam to Nana</div>
+      </div>
+      <div class="budget-thb">500<span class="myr">~RM 65</span></div>
+    </div>
+
+    <div class="budget-row">
+      <div class="budget-item">Misc small expenses
+        <div class="note">Water bottles, 7-Eleven runs, tips, ferry rides, coin drops</div>
+      </div>
+      <div class="budget-thb">400<span class="myr">~RM 52</span></div>
+    </div>
+
+    <div class="budget-row total">
+      <div class="budget-item"><strong>Fixed costs total (before shopping)</strong></div>
+      <div class="budget-thb">16,500<span class="myr" style="color:var(--rust)">~RM 2,145</span></div>
+    </div>
+
+    <div class="budget-row">
+      <div class="budget-item">Shopping budget (Jodd Fairs + Terminal 21 + Chatuchak + Siam)
+        <div class="note">Remaining from your RM 1,500–2,500 budget. Adjust to comfort.</div>
+      </div>
+      <div class="budget-thb">1,500–6,500<span class="myr">~RM 195–845</span></div>
+    </div>
+
+    <div class="budget-row total" style="background:#FDF6E3;">
+      <div class="budget-item"><strong>Trip total (both pax, excl. flights)</strong>
+        <div class="note">Comfortable within your stated budget. Shopping is the only variable.</div>
+      </div>
+      <div class="budget-thb" style="font-size:22px;color:var(--teal)">~18,000–23,000<span class="myr" style="color:var(--teal)">~RM 2,340–2,990</span></div>
+    </div>
+  </div>
+
+  <p style="font-size:13px;color:var(--mid);margin-top:14px;"><strong>Money tips:</strong> Withdraw THB from ATMs in Bangkok (look for "no foreign fee" ATMs — Bangkok Bank has 220 THB fee, some Kasikorn branches have lower). Better rate than any airport exchange. Wise card works. Bring ~RM 500 in small bills to exchange at the airport for immediate Grab cash on arrival.</p>
+
+  <hr class="thin">
+
+  <!-- ═══════════════════════════════════════
+       TIPS
+  ════════════════════════════════════════ -->
+  <div id="tips" class="section-head">
+    <span class="section-num">Practical</span>
+    <h2 class="section-title">Tips, rules & things to know</h2>
+  </div>
+
+  <div class="tips-grid">
+    <div class="tip-card">
+      <span class="tip-card-icon">🌡</span>
+      <div class="tip-card-title">Beat the heat</div>
+      <div class="tip-card-body">Outdoor activities only before 11 AM and after 5 PM. During 12–4 PM: malls, hotel, or air-con cafes. Drink water constantly — a bottle per hour outdoors minimum. 7-Eleven is everywhere.</div>
+    </div>
+    <div class="tip-card">
+      <span class="tip-card-icon">💳</span>
+      <div class="tip-card-title">Money</div>
+      <div class="tip-card-body">Get a <strong>Rabbit Card</strong> from any BTS station (~100 THB deposit). Works on BTS and MRT. Load 600 THB between you to start. Markets are cash only — always carry 1,000–2,000 THB in small bills.</div>
+    </div>
+    <div class="tip-card">
+      <span class="tip-card-icon">👗</span>
+      <div class="tip-card-title">Temple dress code</div>
+      <div class="tip-card-body">Grand Palace is strictest — covered shoulders AND knees. No shorts, no sleeveless. Sarongs to borrow at the gate, but they run out. Wear a light linen shirt. Remove shoes before entering halls.</div>
+    </div>
+    <div class="tip-card">
+      <span class="tip-card-icon">🚗</span>
+      <div class="tip-card-title">Getting around</div>
+      <div class="tip-card-body">BTS + MRT for 90% of the trip. Grab for airport and any destination not near a station. Avoid metered taxis that won't use the meter. Never take stationary tuk-tuks — they will take you to gem shops.</div>
+    </div>
+    <div class="tip-card">
+      <span class="tip-card-icon">☂️</span>
+      <div class="tip-card-title">Rain prep</div>
+      <div class="tip-card-body">40% rain chance on Thu and Sat. Pack a compact umbrella — doubles as sun shade. Rain in Bangkok is usually short and heavy — if it starts, step into a 7-Eleven or covered walkway for 15 min. It passes.</div>
+    </div>
+    <div class="tip-card">
+      <span class="tip-card-icon">📱</span>
+      <div class="tip-card-title">Apps to install</div>
+      <div class="tip-card-body"><strong>Grab</strong> (transport), <strong>Google Maps</strong> with Bangkok downloaded offline, <strong>Line</strong> (contact salons/book appointments), <strong>Google Translate</strong> camera mode (for Thai menus).</div>
+    </div>
+    <div class="tip-card">
+      <span class="tip-card-icon">🛡</span>
+      <div class="tip-card-title">Scam awareness</div>
+      <div class="tip-card-body">Common scam: someone tells you the Grand Palace is "closed today" and offers an alternative tour. It's never closed for this reason. Walk straight to the ticket window. Also: tuk-tuk "sightseeing tours" that end at gem shops.</div>
+    </div>
+    <div class="tip-card">
+      <span class="tip-card-icon">🇹🇭</span>
+      <div class="tip-card-title">Basic Thai courtesy</div>
+      <div class="tip-card-body"><em>Sawasdee krap/ka</em> (hello), <em>khob khun krap/ka</em> (thank you), <em>thao rai</em> (how much). Always smile — it opens doors. Never raise your voice. A calm smile gets better service and better prices.</div>
+    </div>
+    <div class="tip-card">
+      <span class="tip-card-icon">🏨</span>
+      <div class="tip-card-title">Hotel tips</div>
+      <div class="tip-card-body">Ask lyf Sukhumvit 8 for early check-in at booking. They often accommodate it free. Store bags on checkout day (Day 3) — standard free service. Use the rooftop terrace in the evenings for a quiet wind-down.</div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  Made with care for <span>J6</span> & co. · Bangkok 30 Apr – 2 May 2026 · <span>j6.studio</span>
+</footer>
+
+<script>
+  // Active nav highlighting on scroll
+  const sections = document.querySelectorAll('[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
