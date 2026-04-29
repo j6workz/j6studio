@@ -266,20 +266,29 @@ Tell the therapist your pressure preference before they start. **For her:** requ
 
 ---
 
-### 14:30 → 16:00 · Hotel rest (mandatory pause)
+### 14:30 → 16:00 · Energy call — shopping OR rest
 
-**Weather** · 31–32°C feels 38, **rain prob 73–76% peak**, drizzle.
+**Weather** · 31–32°C feels 38, **rain prob 73–76% (drizzle 0.1mm, not heavy)**, peak heat. Both options are AC indoor → storm-proof either way.
 
-⚠️ **Do not skip this rest.** This is the worst rain window of the day combined with peak heat. You'll regret pushing through to Wat Arun now (less light, more rain).
+> **Note on Bangkok rain:** "73% rain prob" sounds scary but the actual hourly precipitation is 0.1 mm (drizzle, not downpour). Rule of thumb: **<1 mm/hr = umbrella + carry on. >3 mm/hr = stay indoor.**
 
-**Transport from Wat Pho area:** Grab to hotel ~25–35 min, 150–250 THB.
+**Two equal options — pick by energy:**
 
-**Plan:** Shower, charge phones, lie down 60 min. The 16:30 window for Wat Arun is the perfect golden-hour weather break.
+**Option A — Krungthong Plaza shopping** (default if energy is OK)
+- Plus-size mall, dedicated AC, 4 floors, sizes up to 5XL–7XL
+- BTS Phrom Phong / Chidlom + 8 min walk, or Grab from Wat Pho area ~25 min 150 THB
+- Tops 200–500 THB, dresses 300–700, linen sets 500–900 THB
+
+**Option B — Hotel rest** (default if Day 2 morning drained you)
+- Shower, charge phones, lie down 60 min
+- Useful if you skipped the morning indoor wait by accident or got soaked
+
+**Why this isn't "mandatory rest" anymore:** the 14:30–16:00 window is rain-prob heavy but actual precipitation is light drizzle. AC mall is fine. You only need physical rest if energy is genuinely low, not because of weather.
 
 **Alternatives & when to use:**
-- *Krungthong Plaza shopping:* if not tired, swap rest for storm-proof plus-size mall trip. ~30 min from Wat Pho via taxi. **Use if energy high and Ferina prioritising shopping over Wat Arun.**
-- *Hotel pool / rooftop:* if available (lyf has rooftop terrace — check) and rain clears.
-- *Push to Wat Arun anyway:* **do not** — climbing the prang in 76% rain prob with low light is unsafe and unphotogenic.
+- *Platinum Fashion Mall (Pratunam):* bigger, 2,000 stalls, F3–F4 plus-size. **Use instead of Krungthong if you want max selection.**
+- *Hotel pool / rooftop:* if rain clears and you want a quiet 30 min.
+- *Push to Wat Arun early:* **don't** — sky overcast, photos flat, and the 16:30 golden hour is the actual reward.
 
 ---
 
@@ -545,6 +554,11 @@ Flight time ~2 hr 15 min. Arrives KLIA2 ~22:00 KL time. Home by ~23:30.
 ### Rain prep
 - 40–76% rain prob across multiple windows. Compact umbrella each.
 - Rain in Bangkok is **short and heavy** — if it starts, step into a 7-Eleven or covered walkway for 15 min, it passes.
+- **Rule of thumb:** rain probability ≠ rain volume. Check actual mm/hr in forecast:
+  - **0–0.5 mm/hr** = drizzle, umbrella OK, walk
+  - **0.5–3 mm/hr** = light rain, umbrella + raincoat, slow down
+  - **>3 mm/hr** = heavy, stay indoor, wait it out
+  - 9 AM Day 2 = 8.4 mm/hr (real avoidance trigger). 14:00 Day 2 = 0.1 mm/hr (drizzle, fine).
 
 ### Temple dress code (Grand Palace strictest)
 - Covered shoulders + knees (both).
