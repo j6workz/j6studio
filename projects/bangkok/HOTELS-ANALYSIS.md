@@ -180,6 +180,25 @@ All top picks are within **0.2–0.8 km of Soi 3 (Little Arabia)** — halal res
 | **Want most validated by reviews** | Aspira Sukhumvit (4,044 reviews) |
 | **Want refundable** | None of these are refundable on lead rate. Filter rate options on AirAsia site to find refundable variants (typically 10–20% premium). |
 
+---
+
+## ✅ Final decision — booked
+
+**GLOW Sukhumvit 5 by Centropolis** — RM 175.24/night × 2 = **RM 350.48 total** (member rate via AirAsia BIG, non-refundable).
+
+- 4 stars · 4.1/5 (154 reviews) · 0.47 km from Soi Nana area
+- **Rooftop pool ✓** (chosen for this — original lyf had no pool)
+- Coords: 13.743463, 100.55448 (Soi 5, west of Nana BTS)
+- Amenities: Pool, Gym, Free WiFi, Free self parking, Dry cleaning, Concierge, 24-hr desk
+- Saves ~RM 25 vs lyf and adds pool
+
+**Trade-offs accepted:**
+- +3-5 min walk to Soi 3 halal street vs lyf (5 min vs 2 min — still trivial)
+- Smaller review sample (154 — same caveat as lyf had)
+- Non-refundable
+
+**App + plan updated:** anchors, transports, slots, TRIP-PLAN.md hotel header, Day 1 check-in, Day 2 rest pool option, Day 3 bag storage, hotel tips section, budget table.
+
 **Booking links** (replace `{id}` with hotel id from data dictionary):
 - Search URL pattern: `https://www.airasia.com/hotels/{id}/...`
 - Or open AirAsia site, search Bangkok 30 Apr–2 May 2026, scroll to hotel name.

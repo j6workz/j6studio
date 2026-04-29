@@ -1,7 +1,7 @@
 # Bangkok Trip — 30 Apr → 2 May 2026
 
 **Travellers:** J6 + Ferina (2 pax)
-**Hotel:** lyf Sukhumvit 8 · Soi Sukhumvit 8 · 5-min walk Nana BTS
+**Hotel:** GLOW Sukhumvit 5 by Centropolis · Soi Sukhumvit 5 · 5-min walk Nana BTS · **rooftop pool ✓** · RM 175/night · booked via AirAsia BIG (member rate, non-refundable)
 **Return flight:** AK893 · Don Mueang (DMK) → KLIA2 · 18:45 dep · arrives ~22:00 KL
 **Sunrise / sunset (all 3 days):** ~05:57 / ~18:33
 
@@ -15,6 +15,7 @@
 
 ## Pre-trip checklist (do tonight)
 
+- [ ] **CRITICAL — message GLOW Sukhumvit 5 TONIGHT** to request 9 AM early check-in for Apr 30. 24hr front desk responds; if room not ready they'll offer day-room or lobby + bag drop. Don't show up at 9 AM expecting a room without asking.
 - [ ] **CRITICAL — message Green Pastures on Line TONIGHT** to book Thursday 14:30. Walk-in is risky for a popular Korean Aveda salon — a 1–2 hr wait or turn-away kills the day. Search "Green Pastures by Hajin" on Line, or DM their Instagram `@greenpasturesbyhajin`.
 - [ ] **Decide salon scope BEFORE booking:**
   - **Cut + blowdry only** = ~1,000–1,200 THB (~RM 130–160). Skip Aveda Invati treatment.
@@ -60,7 +61,7 @@
 **Weather** · 32–34°C, feels 37–39, UV climbing 4 → 8. **You will not enjoy outdoors.**
 
 **Plan:** Drop bags. If room ready: **shower and sleep 3 hr non-negotiable.** You've been awake since 03:00 KL time. Running temples on zero sleep in 35°C heat ruins Day 2.
-If room not ready: ask front desk to call when ready, rest in lobby lounge (cool, comfortable). Pro tip: email lyf yesterday to request early check-in — they often accommodate free.
+If room not ready: ask front desk to call when ready, rest in lobby lounge (cool, comfortable). Pro tip: email/Line GLOW yesterday to request 9 AM early check-in — they have 24hr front desk and often accommodate free if room available, or offer a day-room (paid) or comfortable lobby couch + bag drop.
 
 **Transport:** N/A (already at hotel).
 
@@ -76,7 +77,7 @@ If room not ready: ask front desk to call when ready, rest in lobby lounge (cool
 
 **Halal-friendly · she + you both safe.**
 
-**Plan:** Walk Soi 8 → Sukhumvit Road → Soi 3/1. 5–8 min. Eat:
+**Plan:** Walk Soi 5 → Sukhumvit Road → Soi 3/1. ~5 min, 380 m. Eat:
 - **Petra** (Soi 3/1) — Yemeni mandi, smoky lamb on biryani in sealed pot. Must-try. ~280 THB pp.
 - **Al Hussain** — chicken biryani, butter chicken, fresh naan. ~180 THB pp.
 - **Bamboo / Al-Khayma** — Lebanese, hummus + shawarma. ~200 THB pp.
@@ -157,7 +158,7 @@ Dessert: any Lebanese sweet shop on Soi 3 — knafeh, baklava — ~80–150 THB.
 **Plan:** Bed by 22:30. Big temple day tomorrow — wake 06:30.
 
 **Alternatives & when to use:**
-- *Rooftop terrace at lyf:* 30 min decompress with a soft drink. **Skip if storm cells visible.**
+- *GLOW rooftop pool:* 30 min decompress with a soft drink. **Skip if lightning visible.** Pool typically 07:00–21:00, confirm at check-in.
 - *Late call to Green Pastures / Boy Rikyu:* confirm Day 1 booking if walk-in.
 
 ---
@@ -524,7 +525,7 @@ Flight time ~2 hr 15 min. Arrives KLIA2 ~22:00 KL time. Home by ~23:30.
 
 | Item | Cost (THB) | RM equivalent |
 |---|---|---|
-| Hotel · 2 nights @ ~2,500 THB | 5,000 | ~650 |
+| Hotel · GLOW Sukhumvit 5 · 2 nights @ RM 175 (~1,348 THB) | 2,696 | ~350 |
 | Airport Grabs (DMK arrival + departure) | 700 | ~91 |
 | BTS / MRT / boats · 3 days both pax | 600 | ~78 |
 | Temple entries (Grand Palace + Wat Pho + Wat Arun) both pax | 1,800 | ~234 |
@@ -534,18 +535,20 @@ Flight time ~2 hr 15 min. Arrives KLIA2 ~22:00 KL time. Home by ~23:30.
 | Beard trim (J6) + Wat Pho massage 2× + 1 evening massage | 1,500 | ~195 |
 | Grab rides within Bangkok | 700 | ~91 |
 | Misc — water, 7-Eleven, ferries, tips, coins | 500 | ~65 |
-| **Fixed costs Tier A (cut only)** | 15,500 | ~2,015 |
-| **Fixed costs Tier B (cut + treatment)** | 17,300 | ~2,250 |
+| **Fixed costs Tier A (cut only)** | 13,200 | ~1,715 |
+| **Fixed costs Tier B (cut + treatment)** | 15,000 | ~1,950 |
 | Shopping (Jodd Fairs / Terminal 21 / Chatuchak / Siam / ICONSIAM) | 3,000–8,000 | ~390–1,040 |
-| **Trip total Tier A · low shopping** | **~18,500** | **~2,400** |
-| **Trip total Tier B · medium shopping** | **~22,000** | **~2,860** |
-| **Trip total Tier B · high shopping** | **~25,000** | **~3,250** |
+| **Trip total Tier A · low shopping** | **~16,200** | **~2,100** |
+| **Trip total Tier B · medium shopping** | **~19,700** | **~2,560** |
+| **Trip total Tier B · high shopping** | **~22,700** | **~2,950** |
 
-⚠️ **Budget reality check.** Stated target was **RM 1,500–2,500.** Even Tier A with low shopping lands around **RM 2,400** — just inside the top end. Tier B + high shopping pushes to **RM 3,250.** Going in eyes open:
+✅ **Budget update — hotel swap helped.** GLOW Sukhumvit 5 saves ~RM 300 (~2,300 THB) over original lyf budget. Stated target was RM 1,500–2,500. Now realistic range:
 
-**To hit RM 1,500–2,000:** Tier A salon + cap shopping at ~RM 200–400 (Chatuchak essentials only, skip Siam Paragon premium brands).
+**To hit RM 1,500–1,800:** Tier A salon + cap shopping at ~RM 200–400 (Chatuchak essentials only, skip Siam Paragon premium).
 
-**Most likely realistic:** Tier A salon + RM 500–800 shopping = ~RM 2,000–2,400. Inside target if you exercise some restraint at Chatuchak.
+**Most likely realistic:** Tier A salon + RM 500–800 shopping = **~RM 1,700–2,100**. Comfortably inside target.
+
+**Tier B (Aveda thinning treatment + medium shopping):** ~RM 2,500–2,700. At top of original target but doable.
 
 **Money tips:**
 - **ATMs in Bangkok charge 220 THB** foreign-card fee (Bangkok Bank). Some Kasikorn branches lower. Wise card waives some.
@@ -605,10 +608,11 @@ Flight time ~2 hr 15 min. Arrives KLIA2 ~22:00 KL time. Home by ~23:30.
 - Thao rai — how much.
 - **Always smile.** Calm smile gets better service and prices.
 
-### Hotel tips (lyf Sukhumvit 8)
-- Email/call ahead: **request early check-in** Day 1. Often free.
-- **Bag storage Day 3** — standard free service, ~6 hr.
-- Rooftop terrace: quiet evening wind-down spot.
+### Hotel tips (GLOW Sukhumvit 5)
+- **Message GLOW the day before** via Line/email/Booking — request 9 AM early check-in. 24hr front desk responds; often accommodates free if room available, otherwise offers day-room (paid) or comfortable lobby + bag drop.
+- **Bag storage Day 3** — standard free service via 24hr desk, ~6 hr.
+- **Rooftop pool** ✓ — main amenity upgrade vs lyf. Pool typically 07:00–21:00, confirm at check-in. Use Day 2 14:30–16:00 rest window OR Day 3 morning pre-Chatuchak.
+- **Soi 5** = one Soi west of Nana BTS. Same ~5 min walk to Soi 3 halal street as Soi 8 was.
 
 ### Apps to install before you leave
 - **Grab** (transport)
@@ -622,7 +626,7 @@ Flight time ~2 hr 15 min. Arrives KLIA2 ~22:00 KL time. Home by ~23:30.
 # Emergency
 
 - **Tourist police:** 1155 (English-speaking)
-- **Hospital (best for tourists, near hotel):** Bumrungrad International, 33 Soi 3 Sukhumvit (10 min walk from lyf)
+- **Hospital (best for tourists, near hotel):** Bumrungrad International, 33 Soi 3 Sukhumvit (~8 min walk from GLOW Soi 5)
 - **Embassy of Malaysia in Bangkok:** 02-629-6800
 - **AirAsia counter:** at DMK Terminal 1, hotline +66-2-515-9999
 

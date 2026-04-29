@@ -4,11 +4,11 @@
 // `tags`: halal_friendly | non_halal | plus_size | must_see | indoor
 
 export const anchors = [
-  { id: "hotel", name: "lyf Sukhumvit 8", coords: { lat: 13.7398, lon: 100.5567 },
-    weather: "indoor", duration_min: 30, category: "transit", tags: [],
-    cost_thb: 0, hours: "24/7",
-    notes: "Base. Soi 8, 5 min walk to Nana BTS. Drop bags, freshen up, communal lounge.",
-    gmaps_url: "https://maps.google.com/?q=lyf+Sukhumvit+8", emoji: "🛏" },
+  { id: "hotel", name: "GLOW Sukhumvit 5 by Centropolis", coords: { lat: 13.743463, lon: 100.55448 },
+    weather: "indoor", duration_min: 30, category: "transit", tags: ["indoor"],
+    cost_thb: 2700, hours: "24/7 (check-in 14:00 standard)",
+    notes: "Booked via AirAsia BIG. Soi 5, 5 min walk to Nana BTS, 5 min walk to Soi 3 (halal). Rooftop pool ✓, gym, free WiFi, free parking, 24hr desk, dry cleaning, concierge. RM 175/night.",
+    gmaps_url: "https://maps.google.com/?q=GLOW+Sukhumvit+5+Bangkok", emoji: "🏨" },
   { id: "dmk_airport", name: "Don Mueang Airport (DMK)", coords: { lat: 13.9126, lon: 100.6068 },
     weather: "indoor", duration_min: 90, category: "transit", tags: [],
     cost_thb: 0, hours: "24/7",
