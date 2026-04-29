@@ -13,7 +13,11 @@
 
 ## Pre-trip checklist (do tonight)
 
-- [ ] Book Green Pastures via Line (see Day 1 14:30 — walk-in OK but call to confirm)
+- [ ] **CRITICAL — message Green Pastures on Line TONIGHT** to book Thursday 14:30. Walk-in is risky for a popular Korean Aveda salon — a 1–2 hr wait or turn-away kills the day. Search "Green Pastures by Hajin" on Line, or DM their Instagram `@greenpasturesbyhajin`.
+- [ ] **Decide salon scope BEFORE booking:**
+  - **Cut + blowdry only** = ~1,000–1,200 THB (~RM 130–160). Skip Aveda Invati treatment.
+  - **Cut + Aveda thinning treatment combo** = ~2,500–3,500 THB (~RM 325–455). Treatment is what inflates the bill.
+  - Pick based on whether you want a one-off pamper or whether the thinning treatment justifies the spend.
 - [ ] Download offline Bangkok area in Google Maps
 - [ ] Install Grab + Line apps on both phones
 - [ ] Charge power banks
@@ -90,8 +94,13 @@ Drink **at least 2 bottles of water.** Bangkok heat + jet lag dehydration is rea
 
 **Weather** · 35°C feels 41 (peak), 31–41% rain prob, UV 5–6. **Stay AC the entire window.**
 
-**Plan (her):** Pre-booked at **Green Pastures by Hajin**, 95/1 Sukhumvit Soi 49 (Phrom Phong BTS + 10 min walk). Korean salon, Aveda partner for treatments. Ask for **cut + Aveda Invati thinning treatment combo.**
-**Pricing:** cut from 700 THB, Aveda thinning treatment ~1,500–2,500 THB → combo realistic **2,500–3,500 THB (~RM 325–455).**
+**Plan (her):** Pre-booked at **Green Pastures by Hajin**, 95/1 Sukhumvit Soi 49 (Phrom Phong BTS + 10 min walk). Korean salon, Aveda partner for treatments. **Booking should be confirmed Wed night via Line** — walk-in 14:30 is risky.
+
+**Two pricing tiers — decide before booking:**
+- **Tier A — cut + blowdry only:** ~700–1,000 THB cut + blowdry → **total ~1,000–1,200 THB (~RM 130–160).** Quick refresh; no Aveda Invati. **Pick this if budget is the priority.**
+- **Tier B — cut + Aveda Invati thinning treatment combo:** ~700–1,000 cut + 1,500–2,500 treatment → **total 2,500–3,500 THB (~RM 325–455).** **Pick this if she wants the thinning-hair pamper specifically.**
+
+The Aveda treatment is what inflates the bill. Decide tonight.
 
 **Plan (J6):** While she's there, walk to any men's grooming shop on Sukhumvit Soi 3–11 or near Phrom Phong. Beard trim + hot towel finish 150–250 THB, 20–30 min.
 
@@ -131,6 +140,7 @@ Dessert: any Lebanese sweet shop on Soi 3 — knafeh, baklava — ~80–150 THB.
 
 **Alternatives & when to use:**
 - *Jodd Fairs Ratchada night market:* outdoor, **non-halal heavy** (volcano ribs = pork). Skip Day 1 — energy too low. Better Day 2 if needed.
+  - **If you do go with Ferina:** halal stalls are scattered. Look for **Madam Luck** (halal Thai) or stalls with green halal stickers. Mango sticky rice, fresh seafood (grilled fish/prawns), Korean fried chicken (some stalls halal-marked), Thai fruit smoothies are safe defaults. **Avoid:** Leng Zabb volcano ribs, moo ping skewers, pork knuckle stalls.
 - *ICONSIAM SookSiam:* if she wants the indoor-floating-market experience already. But Day 2 evening covers it.
 - *Hotel room delivery via Grab Food:* if both crashing. Halal Thai 200–300 THB pp.
 
@@ -416,7 +426,7 @@ Tell the therapist your pressure preference before they start. **For her:** requ
 
 ---
 
-### 12:00 → 14:30 · Siam Paragon — last shopping + lunch 💎
+### 12:00 → 14:00 · Siam Paragon — last shopping + lunch 💎
 
 **Weather (outside)** · 33°C feels 41 (worst hour), then 30°C with rain by 13:00. **Stay AC the entire window.**
 
@@ -431,7 +441,7 @@ Tell the therapist your pressure preference before they start. **For her:** requ
    - **Jim Thompson silk** — premium Thai cotton/silk. Cotton shirts 1,500–2,500 THB. One special piece each.
    - **Beauty hall** — Thai cosmetics (Mistine, Snail White, Karmakamet) cheaper than airport.
 
-**Time check:** by 14:00 start heading to BTS.
+**Time check:** by **13:50** start heading to BTS. Earlier is safer.
 
 **Alternatives & when to use:**
 - *MBK Center (Floor 6 — Dr Zu plus-size men):* **for J6 specifically.** Cotton/linen 300–800 THB up to XXL–4XL. Walk from Siam Paragon ~5 min covered walkway. **Use if J6 needs shirts and Uniqlo doesn't fit.**
@@ -440,9 +450,11 @@ Tell the therapist your pressure preference before they start. **For her:** requ
 
 ---
 
-### 14:30 → 15:00 · Siam → hotel + collect bags
+### 14:00 → 14:30 · Siam → hotel + collect bags
 
 **Weather** · 31°C feels 37, rain easing, UV 6.
+
+⚠️ **Leave Siam by 14:00 sharp** (not 14:30). Buffer for Saturday DMK traffic.
 
 **Transport:** BTS Siam → Nana (~10 min, 32 THB) → walk 5 min. **15 min total.**
 
@@ -450,13 +462,13 @@ Tell the therapist your pressure preference before they start. **For her:** requ
 
 ---
 
-### 15:00 → 16:00 · Grab to Don Mueang (DMK)
+### 14:30 → 16:15 · Grab to Don Mueang (DMK)
 
 **Weather** · 30–31°C feels 35, light rain possible, **Saturday afternoon traffic peak**.
 
-⚠️ **Leave 15:00 sharp.** Saturday DMK route can take 60–75 min vs typical 45 min. Counter closes 17:45 for AK893 18:45.
+⚠️ **Leave hotel 14:30 sharp.** Saturday DMK route realistically 60–90 min, NOT 45. Counter closes 17:45 for AK893 18:45. Earlier-than-needed beats missed-flight.
 
-**Transport:** Grab car door-to-door, ~45–75 min, **300–450 THB.**
+**Transport:** Grab car door-to-door, ~60–90 min, **300–450 THB.**
 
 **Alternatives & when to use:**
 - *Airport Rail Link (ARL):* DOES NOT serve DMK — ARL goes to Suvarnabhumi only. **Don't confuse.**
@@ -496,13 +508,23 @@ Flight time ~2 hr 15 min. Arrives KLIA2 ~22:00 KL time. Home by ~23:30.
 | BTS / MRT / boats · 3 days both pax | 600 | ~78 |
 | Temple entries (Grand Palace + Wat Pho + Wat Arun) both pax | 1,800 | ~234 |
 | Food · all meals 3 days both pax | 3,500 | ~455 |
-| **Salon — Green Pastures combo (cut + Aveda thinning)** | 3,000 | ~390 |
+| **Salon — Green Pastures · Tier A (cut+blow only)** | 1,200 | ~155 |
+| **Salon — Green Pastures · Tier B (cut + Aveda thinning)** | 3,000 | ~390 |
 | Beard trim (J6) + Wat Pho massage 2× + 1 evening massage | 1,500 | ~195 |
 | Grab rides within Bangkok | 700 | ~91 |
 | Misc — water, 7-Eleven, ferries, tips, coins | 500 | ~65 |
-| **Fixed costs total** | **17,300** | **~2,250** |
+| **Fixed costs Tier A (cut only)** | 15,500 | ~2,015 |
+| **Fixed costs Tier B (cut + treatment)** | 17,300 | ~2,250 |
 | Shopping (Jodd Fairs / Terminal 21 / Chatuchak / Siam / ICONSIAM) | 3,000–8,000 | ~390–1,040 |
-| **Trip total (both pax, excl. flights)** | **~20,000–25,000** | **~2,600–3,250** |
+| **Trip total Tier A · low shopping** | **~18,500** | **~2,400** |
+| **Trip total Tier B · medium shopping** | **~22,000** | **~2,860** |
+| **Trip total Tier B · high shopping** | **~25,000** | **~3,250** |
+
+⚠️ **Budget reality check.** Stated target was **RM 1,500–2,500.** Even Tier A with low shopping lands around **RM 2,400** — just inside the top end. Tier B + high shopping pushes to **RM 3,250.** Going in eyes open:
+
+**To hit RM 1,500–2,000:** Tier A salon + cap shopping at ~RM 200–400 (Chatuchak essentials only, skip Siam Paragon premium brands).
+
+**Most likely realistic:** Tier A salon + RM 500–800 shopping = ~RM 2,000–2,400. Inside target if you exercise some restraint at Chatuchak.
 
 **Money tips:**
 - **ATMs in Bangkok charge 220 THB** foreign-card fee (Bangkok Bank). Some Kasikorn branches lower. Wise card waives some.
