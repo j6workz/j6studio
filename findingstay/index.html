@@ -166,7 +166,7 @@ footer{color:var(--muted);font-size:13px;padding:28px 0 calc(40px + env(safe-are
 .chip.vt span{display:flex;align-items:center;padding:0 13px;color:var(--muted)}
 .chip.vt span+span{border-left:1px solid var(--line)}
 .chip.vt span.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.ico{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;flex:none}
+.ico{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round;flex:none}
 #searchPill{display:inline-flex;align-items:center;gap:6px}
 #spl{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:56vw}
 .sbtn{flex:none;display:grid;place-items:center;width:38px;height:38px;border-radius:10px;cursor:pointer;font:inherit;font-size:16px;font-weight:700}
@@ -178,6 +178,10 @@ footer{color:var(--muted);font-size:13px;padding:28px 0 calc(40px + env(safe-are
 .searchbar{display:flex;gap:8px;align-items:center}
 .searchbar .sbox{flex:1 1 auto}
 .done{flex:none;min-height:36px;padding:0 14px;border-radius:10px;border:0;background:var(--ink);color:var(--bg);font:inherit;font-weight:700;cursor:pointer}
+#gearPill{display:inline-flex;align-items:center;gap:5px}
+#gearN{background:var(--link);color:#fff;border-radius:999px;font-size:11px;font-weight:800;padding:1px 6px;line-height:1.4}
+.mynotes.notespop{position:absolute;top:calc(100% - 4px);left:16px;right:16px;margin:0;z-index:2;box-shadow:0 10px 28px rgba(0,0,0,.22)}
+@media (min-width:760px){.mynotes.notespop{left:auto;right:16px;width:440px}}
 #sortmenu{position:absolute;top:calc(100% - 4px);left:16px;min-width:190px;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 28px rgba(0,0,0,.22);list-style:none;margin:0;padding:6px;z-index:2}
 #sortmenu li{padding:10px 12px;border-radius:8px;cursor:pointer;font-size:15px}
 #sortmenu li:hover{background:var(--pill)}
@@ -227,6 +231,7 @@ input,select,textarea{font-size:16px!important}
     <button class="chip" data-f="nc" aria-pressed="false">Not contacted yet</button>
     <button class="chip" data-f="ok" aria-pressed="false">Price confirmed</button>
     <button class="chip" data-f="unf" aria-pressed="false">Incl. unfurnished</button>
+    <button type="button" class="chip" id="gearPill" aria-haspopup="dialog" aria-expanded="false" aria-controls="notesPop" aria-label="Your notes, export and import"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg><span id="gearN" hidden></span></button>
   </div>
   <div class="searchbar" id="searchbar" hidden>
     <div class="sbox" id="sbox"><span class="stags" id="stags"></span><input id="q" type="search" autocomplete="off" enterkeyhint="search" placeholder="Search" aria-label="Search or pick a building" role="combobox" aria-expanded="false" aria-controls="sugg" aria-autocomplete="list"></div>
@@ -237,12 +242,12 @@ input,select,textarea{font-size:16px!important}
     <li role="option" data-sort="best" aria-selected="true">Top picks</li><li role="option" data-sort="near" aria-selected="false">Nearest first</li>
     <li role="option" data-sort="price" aria-selected="false">Cheapest first</li><li role="option" data-sort="recent" aria-selected="false">Recently viewed</li>
   </ul>
-  <p class="sr" id="count" aria-live="polite"></p>
-</div>
-<div class="mynotes">
+<div class="mynotes notespop" id="notesPop" role="dialog" aria-label="Your notes" hidden>
   <p id="nsum"></p>
   <div><button type="button" id="jump" hidden></button><button type="button" id="exp">Export notes</button><label class="imp">Import notes<input type="file" id="imp" accept="application/json,.json" hidden></label></div>
   <p class="where">Opening a listing marks it viewed. Notes and favourites are saved in this browser; export them to move to another device.</p>
+</div>
+  <p class="sr" id="count" aria-live="polite"></p>
 </div>
 <main>
   <div class="grid" id="feed"></div>
@@ -343,6 +348,7 @@ function wire(root){root.querySelectorAll('.gallery').forEach(g=>{const t=g.quer
   g.querySelector('.prev').onclick=()=>t.scrollBy({left:-t.clientWidth});g.querySelector('.next').onclick=()=>t.scrollBy({left:t.clientWidth})})}
 function refresh(k){const el=document.querySelector(`.card[data-key="${CSS.escape(k)}"]`);if(!el)return;const t=document.createElement('div');t.innerHTML=cardHTML(BY[k]);const nw=t.firstElementChild;el.replaceWith(nw);wire(nw)}
 function summary(){const v=Object.values(S),c=f=>v.filter(x=>x[f]).length;
+ const n=v.filter(x=>x.fav||x.viewed||x.checked||x.contacted||(x.r||'').trim()).length;const gn=$('#gearN');gn.hidden=!n;gn.textContent=n;
  $('#nsum').textContent=`${c('fav')} favourites, ${c('viewed')} viewed, ${c('contacted')} contacted, ${v.filter(x=>(x.r||'').trim()).length} with remarks`;
  $('#jump').hidden=!LAST||!BY[LAST];if(LAST&&BY[LAST])$('#jump').textContent=`Last viewed: ${BY[LAST].n}`}
 function focusCard(k,instant){if(view!=='list')setView('list');CUR=filtered();let idx=CUR.findIndex(i=>i.k===k);
@@ -373,7 +379,12 @@ let tmr;document.addEventListener('input',ev=>{const t=ev.target;
   tmr=setTimeout(()=>{save();const p=t.closest('.notes').querySelector('.saved');if(p)p.textContent='Saved '+when(n.ts)},400);return}
  if(t.id==='q'){shown=18;draw()}});
 $('#more').onclick=()=>{shown+=18;draw()};
-$('#jump').onclick=()=>LAST&&focusCard(LAST);
+$('#jump').onclick=()=>{closeNotes();LAST&&focusCard(LAST)};
+function openNotes(){closeSort();$('#notesPop').hidden=false;$('#gearPill').setAttribute('aria-expanded','true')}
+function closeNotes(){$('#notesPop').hidden=true;$('#gearPill').setAttribute('aria-expanded','false')}
+$('#gearPill').onclick=()=>$('#notesPop').hidden?openNotes():closeNotes();
+document.addEventListener('click',ev=>{if(!ev.target.closest('#gearPill,#notesPop'))closeNotes()});
+document.addEventListener('keydown',ev=>{if(ev.key==='Escape')closeNotes()});
 $('#exp').onclick=()=>{const b=new Blob([JSON.stringify({app:'findingstay',saved:new Date().toISOString(),last:LAST,notes:S},null,1)],{type:'application/json'});
  const a=Object.assign(document.createElement('a'),{href:URL.createObjectURL(b),download:'findingstay-notes.json'});document.body.append(a);a.click();a.remove()};
 $('#imp').onchange=async ev=>{const f=ev.target.files[0];if(!f)return;try{const d=JSON.parse(await f.text()),n=d.notes||d;let c=0;
@@ -443,7 +454,7 @@ function closeSearch(){const t=$('#q').value.trim();if(t){TAGS.push({g:'q',v:t.t
  closeSug();$('#searchbar').hidden=true;$('#row').hidden=false;searchLabel()}
 $('#searchPill').onclick=openSearch;$('#sdone').onclick=closeSearch;
 $('#sclear').onclick=()=>{TAGS=[];$('#q').value='';renderTags();shown=18;draw();closeSearch()};
-function openSort(){const m=$('#sortmenu'),b=$('#sortPill').getBoundingClientRect(),bar=$('#bar').getBoundingClientRect();m.hidden=false;
+function openSort(){if(typeof closeNotes==='function')closeNotes();const m=$('#sortmenu'),b=$('#sortPill').getBoundingClientRect(),bar=$('#bar').getBoundingClientRect();m.hidden=false;
  m.style.left=Math.max(8,Math.min(b.left-bar.left,bar.width-m.offsetWidth-8))+'px';$('#sortPill').setAttribute('aria-expanded','true')}
 function closeSort(){$('#sortmenu').hidden=true;$('#sortPill').setAttribute('aria-expanded','false')}
 $('#sortPill').onclick=()=>$('#sortmenu').hidden?openSort():closeSort();
