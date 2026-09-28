@@ -182,6 +182,8 @@ footer{color:var(--muted);font-size:13px;padding:28px 0 calc(40px + env(safe-are
 #gearN{background:var(--link);color:#fff;border-radius:999px;font-size:11px;font-weight:800;padding:1px 6px;line-height:1.4}
 .mynotes.notespop{position:absolute;top:calc(100% - 4px);left:16px;right:16px;margin:0;z-index:2;box-shadow:0 10px 28px rgba(0,0,0,.22)}
 @media (min-width:760px){.mynotes.notespop{left:auto;right:16px;width:440px}}
+.empty{grid-column:1/-1;text-align:center;padding:40px 16px;color:var(--muted)}
+.empty button{margin-top:10px;min-height:44px;padding:0 18px;border-radius:10px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);font:inherit;font-weight:700;cursor:pointer}
 #sortmenu{position:absolute;top:calc(100% - 4px);left:16px;min-width:190px;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 28px rgba(0,0,0,.22);list-style:none;margin:0;padding:6px;z-index:2}
 #sortmenu li{padding:10px 12px;border-radius:8px;cursor:pointer;font-size:15px}
 #sortmenu li:hover{background:var(--pill)}
@@ -279,7 +281,7 @@ const when=ts=>{const d=new Date(ts),t=new Date();const hm=d.toLocaleTimeString(
  return d.toDateString()===t.toDateString()?`today ${hm}`:`${d.toLocaleDateString([], {day:'numeric',month:'short'})} ${hm}`};
 function markViewed(k){const n=st(k);n.viewed=true;n.viewedAt=Date.now();n.ts=n.viewedAt;const prev=LAST;LAST=k;save();refresh(k);if(prev&&prev!==k)refresh(prev)}
 const BY=Object.fromEntries(ITEMS.map(i=>[i.k,i])),BYID=Object.fromEntries(ITEMS.map(i=>[i.id,i]));
-const linkFor=id=>location.href.split('#')[0]+'#u='+id;
+const linkFor=id=>location.href.split(/[?#]/)[0]+'#u='+id;
 const rmOf=i=>Math.min(i.m??1e9,i.y??1e9);
 const walk=km=>Math.round(km*1.25/5*60);
 const dist=m=>m<1000?`${m} m`:`${(m/1000).toFixed(1)} km`;
@@ -340,8 +342,8 @@ function filtered(){const so=SORT,grp=g=>TAGS.filter(t=>t.g===g).map(t=>t.v),B=g
  r.sort(so==='near'?(a,b)=>a.km-b.km:so==='price'?(a,b)=>rmOf(a)-rmOf(b):so==='recent'?(a,b)=>((S[b.k]||{}).viewedAt||0)-((S[a.k]||{}).viewedAt||0):(a,b)=>score(a)-score(b));
  return r}
 let shown=18,view='list',CUR=[];
-function draw(){CUR=filtered();$('#count').textContent=`${CUR.length} of ${ITEMS.length} units`;$('#q').placeholder=TAGS.length?'Add another filter':`Search ${CUR.length} units`;searchLabel();
- if(view==='list'){$('#feed').innerHTML=CUR.slice(0,shown).map(cardHTML).join('');wire($('#feed'));$('#more').hidden=CUR.length<=shown}
+function draw(){CUR=filtered();syncURL();$('#count').textContent=`${CUR.length} of ${ITEMS.length} units`;$('#q').placeholder=TAGS.length?'Add another filter':`Search ${CUR.length} units`;searchLabel();
+ if(view==='list'){$('#feed').innerHTML=CUR.length?CUR.slice(0,shown).map(cardHTML).join(''):'<div class="empty"><p>No units match these filters.</p><button type="button" id="resetAll">Clear all filters</button></div>';wire($('#feed'));$('#more').hidden=CUR.length<=shown}
  else drawMap()}
 function wire(root){root.querySelectorAll('.gallery').forEach(g=>{const t=g.querySelector('.track'),c=g.querySelector('.count b');
   t.addEventListener('scroll',()=>requestAnimationFrame(()=>{if(c)c.textContent=Math.round(t.scrollLeft/t.clientWidth)+1}),{passive:true});
@@ -379,6 +381,7 @@ let tmr;document.addEventListener('input',ev=>{const t=ev.target;
   tmr=setTimeout(()=>{save();const p=t.closest('.notes').querySelector('.saved');if(p)p.textContent='Saved '+when(n.ts)},400);return}
  if(t.id==='q'){shown=18;draw()}});
 $('#more').onclick=()=>{shown+=18;draw()};
+document.addEventListener('click',ev=>{if(!ev.target.closest('#resetAll'))return;on.clear();$$('.chip[data-f]').forEach(c=>c.setAttribute('aria-pressed','false'));TAGS=[];$('#q').value='';renderTags();shown=18;draw()});
 $('#jump').onclick=()=>{closeNotes();LAST&&focusCard(LAST)};
 function openNotes(){closeSort();$('#notesPop').hidden=false;$('#gearPill').setAttribute('aria-expanded','true')}
 function closeNotes(){$('#notesPop').hidden=true;$('#gearPill').setAttribute('aria-expanded','false')}
@@ -468,6 +471,21 @@ function openFromHash(){const m=location.hash.match(/^#u=([0-9a-f]{8})$/);if(m&&
 window.addEventListener('hashchange',openFromHash);
 const tt=$('#totop');addEventListener('scroll',()=>{tt.hidden=scrollY<600},{passive:true});
 tt.onclick=()=>scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
-summary();draw();openFromHash();
+function syncURL(){const p=new URLSearchParams();if(view==='map')p.set('view','map');if(SORT!=='best')p.set('sort',SORT);
+ if(on.size)p.set('f',[...on].join(','));for(const t of TAGS)p.append(t.g,t.v);const typed=$('#q').value.trim();if(typed)p.set('text',typed);
+ const qs=p.toString(),url=location.pathname+(qs?'?'+qs:'')+location.hash;if(url!==location.pathname+location.search+location.hash)try{history.replaceState(null,'',url)}catch(e){}}
+function restoreURL(){const p=new URLSearchParams(location.search);
+ (p.get('f')||'').split(',').forEach(f=>{const c=f&&document.querySelector(`.chip[data-f="${CSS.escape(f)}"]`);if(c){on.add(f);c.setAttribute('aria-pressed','true')}});
+ const so=p.get('sort');if(['near','price','recent'].includes(so)){SORT=so;$$('#sortmenu li').forEach(x=>x.setAttribute('aria-selected',x.dataset.sort===so));$('#sortPill').textContent={near:'Nearest',price:'Cheapest',recent:'Recent'}[so]}
+ for(const g of ['b','t','s','q'])p.getAll(g).forEach(v=>{if(v&&!TAGS.some(t=>t.g===g&&t.v===v))TAGS.push({g,v})});
+ if(p.get('text'))$('#q').value=p.get('text');renderTags();return p.get('view')==='map'}
+// remember scroll position and how many cards were loaded, per filter combination, for this tab only
+const SKEY=()=>'findingstay-scroll:'+location.search;let stT;
+addEventListener('scroll',()=>{clearTimeout(stT);stT=setTimeout(()=>{if(view==='list')try{sessionStorage.setItem(SKEY(),JSON.stringify({y:scrollY,shown}))}catch(e){}},250)},{passive:true});
+if('scrollRestoration' in history)history.scrollRestoration='manual';
+const wantMap=restoreURL();let saved=null;try{saved=JSON.parse(sessionStorage.getItem(SKEY())||'null')}catch(e){}
+if(saved&&!location.hash&&saved.shown>shown)shown=saved.shown;
+summary();draw();if(wantMap)setView('map');openFromHash();
+if(saved&&!location.hash&&!wantMap)[0,400,1200].forEach(ms=>setTimeout(()=>scrollTo(0,saved.y),ms));
 </script>
 </body></html>
