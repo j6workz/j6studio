@@ -162,11 +162,18 @@ footer{color:var(--muted);font-size:13px;padding:28px 0 calc(40px + env(safe-are
 .pills{scroll-padding-inline:16px}
 .bar{position:sticky}
 .bar .chips{align-items:center}
-.chip.vt{display:inline-flex;gap:0;padding:2px;overflow:hidden}
-.chip.vt span{padding:3px 10px;border-radius:999px;color:var(--muted)}
-.chip.vt span.on{background:var(--ink);color:var(--bg)}
-#searchPill::before{content:"";display:inline-block;width:14px;height:14px;margin-right:6px;vertical-align:-2px;background:currentColor;-webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='10.5' cy='10.5' r='6.5' fill='none' stroke='black' stroke-width='2.6'/><path d='M15.5 15.5 21 21' stroke='black' stroke-width='2.8' stroke-linecap='round'/></svg>") center/contain no-repeat;mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='10.5' cy='10.5' r='6.5' fill='none' stroke='black' stroke-width='2.6'/><path d='M15.5 15.5 21 21' stroke='black' stroke-width='2.8' stroke-linecap='round'/></svg>") center/contain no-repeat}
-#searchPill[aria-pressed=true]{max-width:62vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar .chip.vt{display:inline-flex;align-items:stretch;gap:0;padding:0;overflow:hidden}
+.chip.vt span{display:flex;align-items:center;padding:0 13px;color:var(--muted)}
+.chip.vt span+span{border-left:1px solid var(--line)}
+.chip.vt span.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.ico{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;flex:none}
+#searchPill{display:inline-flex;align-items:center;gap:6px}
+#spl{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:56vw}
+.sbtn{flex:none;display:grid;place-items:center;width:38px;height:38px;border-radius:10px;cursor:pointer;font:inherit;font-size:16px;font-weight:700}
+.sbtn.clr{border:1px solid var(--line);background:var(--surface);color:var(--muted)}
+.sbtn.go{border:0;background:var(--ink);color:var(--bg)}.sbtn.go .ico{width:18px;height:18px}
+
+
 #sortPill::after{content:"";display:inline-block;margin-left:6px;border:4.5px solid transparent;border-top-color:currentColor;border-bottom:0;vertical-align:2px}
 .searchbar{display:flex;gap:8px;align-items:center}
 .searchbar .sbox{flex:1 1 auto}
@@ -207,7 +214,7 @@ input,select,textarea{font-size:16px!important}
 <div class="bar" id="bar">
   <div class="chips" id="row" role="toolbar" aria-label="View, search, sort and filters">
     <button type="button" class="chip vt" id="viewPill" aria-label="Switch between list and map"><span class="on">List</span><span>Map</span></button>
-    <button type="button" class="chip" id="searchPill" aria-pressed="false" aria-label="Search and quick filters">Search</button>
+    <button type="button" class="chip" id="searchPill" aria-pressed="false" aria-label="Search and quick filters"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4.2-4.2"/></svg><span id="spl">Search</span></button>
     <button type="button" class="chip" id="sortPill" aria-haspopup="listbox" aria-expanded="false">Top picks</button>
     <button class="chip" data-f="fav" aria-pressed="false">♥ Favourites</button>
     <button class="chip" data-f="feat" aria-pressed="false">Featured</button>
@@ -223,7 +230,7 @@ input,select,textarea{font-size:16px!important}
   </div>
   <div class="searchbar" id="searchbar" hidden>
     <div class="sbox" id="sbox"><span class="stags" id="stags"></span><input id="q" type="search" autocomplete="off" enterkeyhint="search" placeholder="Search" aria-label="Search or pick a building" role="combobox" aria-expanded="false" aria-controls="sugg" aria-autocomplete="list"></div>
-    <button type="button" class="done" id="sdone">Done</button>
+    <button type="button" class="sbtn clr" id="sclear" aria-label="Clear search">✕</button><button type="button" class="sbtn go" id="sdone" aria-label="Apply search"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4.2-4.2"/></svg></button>
   </div>
   <ul id="sugg" role="listbox" aria-label="Quick filters" hidden></ul>
   <ul id="sortmenu" role="listbox" aria-label="Sort" hidden>
@@ -402,10 +409,11 @@ const cnt=(arr,f)=>Object.entries(arr.reduce((a,i)=>(a[f(i)]=(a[f(i)]||0)+1,a),{
 const isArea=Object.fromEntries(ITEMS.map(i=>[i.b,!!i.ba]));
 const opts=()=>{const bs=base();return[...cnt(bs,i=>i.b).map(([v,n])=>({g:'b',v,n,l:v,k:isArea[v]?'Area':'Building'})),...cnt(bs,i=>i.t).map(([v,n])=>({g:'t',v,n,l:v,k:'Type'})),...cnt(bs,i=>i.st).map(([v,n])=>({g:'s',v,n,l:'Near KRL '+v,k:'Station'}))]};
 const TL={b:'',t:'',s:'Near KRL ',q:'“'};
-function renderTags(){$('#stags').innerHTML=TAGS.map((t,x)=>`<span class="stag">${esc(TL[t.g]+t.v+(t.g==='q'?'”':''))}<button type="button" data-untag="${x}" aria-label="Remove ${esc(t.v)}">×</button></span>`).join('')}
+function renderTags(){$('#stags').innerHTML=TAGS.map((t,x)=>`<span class="stag">${esc(TL[t.g]+t.v+(t.g==='q'?'”':''))}<button type="button" data-untag="${x}" aria-label="Remove ${esc(t.v)}">×</button></span>`).join('');requestAnimationFrame(()=>{$('#sbox').scrollLeft=$('#sbox').scrollWidth})}
 let act=-1,SUG=[];
 function suggest(){const raw=$('#q').value,t=raw.trim().toLowerCase(),used=new Set(TAGS.map(x=>x.g+'|'+x.v));
- SUG=opts().filter(o=>!used.has(o.g+'|'+o.v)&&(!t||o.l.toLowerCase().includes(t))).slice(0,t?8:14);
+ const av=opts().filter(o=>!used.has(o.g+'|'+o.v)&&(!t||o.l.toLowerCase().includes(t)));
+ SUG=t?av.slice(0,8):[...av.filter(o=>o.g==='b').slice(0,8),...av.filter(o=>o.g==='t'),...av.filter(o=>o.g==='s').slice(0,5)];
  if(t&&!used.has('q|'+t))SUG.unshift({g:'q',v:t,l:`Contains “${raw.trim()}”`,k:'Text'});
  act=t&&SUG.length>1?1:-1;paintSug()}
 function paintSug(){const u=$('#sugg');if(!SUG.length){u.hidden=true;$('#q').setAttribute('aria-expanded','false');return}
@@ -422,18 +430,19 @@ $('#q').addEventListener('keydown',ev=>{const u=$('#sugg');
  else if(ev.key==='Escape'){ev.stopPropagation();closeSearch()}
  else if(ev.key==='Backspace'&&!$('#q').value&&TAGS.length){TAGS.pop();renderTags();shown=18;draw();suggest()}});
 $('#sugg').addEventListener('mousedown',ev=>ev.preventDefault());
-$('#sugg').addEventListener('click',ev=>{const li=ev.target.closest('[data-opt]');if(li)addTag(SUG[+li.dataset.opt])});
+$('#sugg').addEventListener('click',ev=>{ev.stopPropagation();const li=ev.target.closest('[data-opt]');if(li)addTag(SUG[+li.dataset.opt])});
 document.addEventListener('click',ev=>{const x=ev.target.closest('[data-untag]');if(x){TAGS.splice(+x.dataset.untag,1);renderTags();shown=18;draw();return}
- if(!ev.target.closest('#sbox,#sugg'))closeSug()});
+ if(!ev.target.closest('#sbox,#sugg,#searchbar'))closeSug()});
 $('#sbox').addEventListener('click',ev=>{if(!ev.target.closest('button'))$('#q').focus()});
 function searchLabel(){const sp=$('#searchPill'),typed=$('#q').value.trim();const n=TAGS.length+(typed?1:0);
- if(!n){sp.textContent='Search';sp.setAttribute('aria-pressed','false');return}
+ const lbl=$('#spl');if(!n){lbl.textContent='Search';sp.setAttribute('aria-pressed','false');return}
  const first=TAGS[0]?TL[TAGS[0].g]+TAGS[0].v+(TAGS[0].g==='q'?'”':''):'“'+typed+'”';
- sp.textContent=`${first}${n>1?' +'+(n-1):''} · ${CUR.length}`;sp.setAttribute('aria-pressed','true')}
+ lbl.textContent=`${first}${n>1?' +'+(n-1):''} · ${CUR.length}`;sp.setAttribute('aria-pressed','true')}
 function openSearch(){closeSort();$('#row').hidden=true;$('#searchbar').hidden=false;$('#q').focus();suggest()}
 function closeSearch(){const t=$('#q').value.trim();if(t){TAGS.push({g:'q',v:t.toLowerCase()});$('#q').value='';renderTags();draw()}
  closeSug();$('#searchbar').hidden=true;$('#row').hidden=false;searchLabel()}
 $('#searchPill').onclick=openSearch;$('#sdone').onclick=closeSearch;
+$('#sclear').onclick=()=>{TAGS=[];$('#q').value='';renderTags();shown=18;draw();closeSearch()};
 function openSort(){const m=$('#sortmenu'),b=$('#sortPill').getBoundingClientRect(),bar=$('#bar').getBoundingClientRect();m.hidden=false;
  m.style.left=Math.max(8,Math.min(b.left-bar.left,bar.width-m.offsetWidth-8))+'px';$('#sortPill').setAttribute('aria-expanded','true')}
 function closeSort(){$('#sortmenu').hidden=true;$('#sortPill').setAttribute('aria-expanded','false')}
@@ -443,8 +452,7 @@ $('#sortmenu').addEventListener('click',ev=>{const li=ev.target.closest('[data-s
  closeSort();shown=18;draw()});
 $('#row').addEventListener('scroll',closeSort,{passive:true});
 document.addEventListener('keydown',ev=>{if(ev.key==='Escape'){if(!$('#sortmenu').hidden)closeSort();else if(!$('#searchbar').hidden)closeSearch()}});
-document.addEventListener('click',ev=>{if(!ev.target.closest('#sortPill,#sortmenu'))closeSort();
- if(!$('#searchbar').hidden&&!ev.target.closest('#searchbar,#sugg,#searchPill,[data-untag]'))closeSearch()});
+document.addEventListener('click',ev=>{if(!ev.target.closest('#sortPill,#sortmenu'))closeSort()});
 function openFromHash(){const m=location.hash.match(/^#u=([0-9a-f]{8})$/);if(m&&BYID[m[1]])setTimeout(()=>focusCard(BYID[m[1]].k,true),60)}
 window.addEventListener('hashchange',openFromHash);
 const tt=$('#totop');addEventListener('scroll',()=>{tt.hidden=scrollY<600},{passive:true});
