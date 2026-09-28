@@ -157,6 +157,25 @@ footer{color:var(--muted);font-size:13px;padding:28px 0 calc(40px + env(safe-are
 .copies-d a{display:inline-block;margin:4px 10px 0 0;font-size:13px}
 
 /* compact sticky bar (kept last so it wins over earlier rules) */
+/* scroll-snap aligns to the scroll area's edge and ignores padding unless scroll-padding is set */
+.bar .chips{padding-left:16px;padding-right:16px;scroll-padding-inline:16px}
+.pills{scroll-padding-inline:16px}
+.bar{position:sticky}
+.bar .chips{align-items:center}
+.chip.vt{display:inline-flex;gap:0;padding:2px;overflow:hidden}
+.chip.vt span{padding:3px 10px;border-radius:999px;color:var(--muted)}
+.chip.vt span.on{background:var(--ink);color:var(--bg)}
+#searchPill::before{content:"";display:inline-block;width:14px;height:14px;margin-right:6px;vertical-align:-2px;background:currentColor;-webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='10.5' cy='10.5' r='6.5' fill='none' stroke='black' stroke-width='2.6'/><path d='M15.5 15.5 21 21' stroke='black' stroke-width='2.8' stroke-linecap='round'/></svg>") center/contain no-repeat;mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='10.5' cy='10.5' r='6.5' fill='none' stroke='black' stroke-width='2.6'/><path d='M15.5 15.5 21 21' stroke='black' stroke-width='2.8' stroke-linecap='round'/></svg>") center/contain no-repeat}
+#searchPill[aria-pressed=true]{max-width:62vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#sortPill::after{content:"";display:inline-block;margin-left:6px;border:4.5px solid transparent;border-top-color:currentColor;border-bottom:0;vertical-align:2px}
+.searchbar{display:flex;gap:8px;align-items:center}
+.searchbar .sbox{flex:1 1 auto}
+.done{flex:none;min-height:36px;padding:0 14px;border-radius:10px;border:0;background:var(--ink);color:var(--bg);font:inherit;font-weight:700;cursor:pointer}
+#sortmenu{position:absolute;top:calc(100% - 4px);left:16px;min-width:190px;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 28px rgba(0,0,0,.22);list-style:none;margin:0;padding:6px;z-index:2}
+#sortmenu li{padding:10px 12px;border-radius:8px;cursor:pointer;font-size:15px}
+#sortmenu li:hover{background:var(--pill)}
+#sortmenu li[aria-selected=true]{font-weight:700}
+#sortmenu li[aria-selected=true]::after{content:" ✓";color:var(--ok)}
 /* iOS Safari zooms into any field under 16px, so every text field and menu is 16px */
 input,select,textarea{font-size:16px!important}
 .sbox{flex:1 1 0;min-width:0;display:flex;align-items:center;gap:4px;border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:2px 6px;min-height:36px;overflow-x:auto;scrollbar-width:none;cursor:text}
@@ -185,8 +204,11 @@ input,select,textarea{font-size:16px!important}
   <h1>Flats a short walk from the Central Jakarta immigration office</h1>
   <p class="lede">412 studios and one-bedrooms from Travelio, Lamudi, Rumah123 and 99.co, each listed once. Budget RM 600–1,200 is <b>Rp 2.6–5.3 jt a month</b> at 1 MYR = 4,390 IDR (28 Sep 2026). Featured picks were checked photo by photo.</p>
 </header>
-<div class="bar">
-  <div class="chips" role="toolbar" aria-label="Filters">
+<div class="bar" id="bar">
+  <div class="chips" id="row" role="toolbar" aria-label="View, search, sort and filters">
+    <button type="button" class="chip vt" id="viewPill" aria-label="Switch between list and map"><span class="on">List</span><span>Map</span></button>
+    <button type="button" class="chip" id="searchPill" aria-pressed="false" aria-label="Search and quick filters">Search</button>
+    <button type="button" class="chip" id="sortPill" aria-haspopup="listbox" aria-expanded="false">Top picks</button>
     <button class="chip" data-f="fav" aria-pressed="false">♥ Favourites</button>
     <button class="chip" data-f="feat" aria-pressed="false">Featured</button>
     <button class="chip" data-f="monthly" aria-pressed="false">Pay monthly</button>
@@ -199,12 +221,15 @@ input,select,textarea{font-size:16px!important}
     <button class="chip" data-f="ok" aria-pressed="false">Price confirmed</button>
     <button class="chip" data-f="unf" aria-pressed="false">Incl. unfurnished</button>
   </div>
-  <div class="toolrow">
-    <div class="views" role="group" aria-label="View"><button data-v="list" aria-pressed="true">List</button><button data-v="map" aria-pressed="false">Map</button></div>
+  <div class="searchbar" id="searchbar" hidden>
     <div class="sbox" id="sbox"><span class="stags" id="stags"></span><input id="q" type="search" autocomplete="off" enterkeyhint="search" placeholder="Search" aria-label="Search or pick a building" role="combobox" aria-expanded="false" aria-controls="sugg" aria-autocomplete="list"></div>
-    <select id="sort" aria-label="Sort"><option value="best">Top picks</option><option value="near">Nearest</option><option value="price">Cheapest</option><option value="recent">Recent</option></select>
+    <button type="button" class="done" id="sdone">Done</button>
   </div>
   <ul id="sugg" role="listbox" aria-label="Quick filters" hidden></ul>
+  <ul id="sortmenu" role="listbox" aria-label="Sort" hidden>
+    <li role="option" data-sort="best" aria-selected="true">Top picks</li><li role="option" data-sort="near" aria-selected="false">Nearest first</li>
+    <li role="option" data-sort="price" aria-selected="false">Cheapest first</li><li role="option" data-sort="recent" aria-selected="false">Recently viewed</li>
+  </ul>
   <p class="sr" id="count" aria-live="polite"></p>
 </div>
 <div class="mynotes">
@@ -294,7 +319,8 @@ const on=new Set();
 const CH={fav:i=>(S[i.k]||{}).fav,feat:i=>i.f>0,monthly:i=>i.m!=null,u700:i=>rmOf(i)<=700,br:i=>/BR/.test(i.t),nc:i=>!(S[i.k]||{}).contacted,nv:i=>!(S[i.k]||{}).viewed,vw:i=>!!(S[i.k]||{}).viewed,rem:i=>!!((S[i.k]||{}).r||'').trim(),ok:i=>!i.conf};
 let TAGS=[];
 const hay=i=>i._h||(i._h=[i.n,i.b,i.t,i.fu,i.note,i.am.join(' '),'krl '+i.st,i.src.join(' '),i.ct.p.map(p=>p.join(' ')).join(' '),i.m?'monthly':'',i.y?'yearly':'',i.f?'featured':'',i.unf?'unfurnished':''].join(' ').toLowerCase());
-function filtered(){const so=$('#sort').value,grp=g=>TAGS.filter(t=>t.g===g).map(t=>t.v),B=grp('b'),T=grp('t'),ST=grp('s');
+let SORT='best';
+function filtered(){const so=SORT,grp=g=>TAGS.filter(t=>t.g===g).map(t=>t.v),B=grp('b'),T=grp('t'),ST=grp('s');
  const words=[...grp('q'),...$('#q').value.split(/\s+/)].map(w=>w.trim().toLowerCase()).filter(Boolean);
  let r=ITEMS.filter(i=>[...on].every(f=>!CH[f]||CH[f](i))&&(on.has('unf')||!i.unf)&&(!B.length||B.includes(i.b))&&(!T.length||T.includes(i.t))&&(!ST.length||ST.includes(i.st))
   &&(!words.length||(h=>words.every(w=>h.includes(w)))(hay(i)+' '+((S[i.k]||{}).r||'').toLowerCase())));
@@ -302,7 +328,7 @@ function filtered(){const so=$('#sort').value,grp=g=>TAGS.filter(t=>t.g===g).map
  r.sort(so==='near'?(a,b)=>a.km-b.km:so==='price'?(a,b)=>rmOf(a)-rmOf(b):so==='recent'?(a,b)=>((S[b.k]||{}).viewedAt||0)-((S[a.k]||{}).viewedAt||0):(a,b)=>score(a)-score(b));
  return r}
 let shown=18,view='list',CUR=[];
-function draw(){CUR=filtered();$('#count').textContent=`${CUR.length} of ${ITEMS.length} units`;$('#q').placeholder=TAGS.length?'Add another filter':`Search ${CUR.length} units`;
+function draw(){CUR=filtered();$('#count').textContent=`${CUR.length} of ${ITEMS.length} units`;$('#q').placeholder=TAGS.length?'Add another filter':`Search ${CUR.length} units`;searchLabel();
  if(view==='list'){$('#feed').innerHTML=CUR.slice(0,shown).map(cardHTML).join('');wire($('#feed'));$('#more').hidden=CUR.length<=shown}
  else drawMap()}
 function wire(root){root.querySelectorAll('.gallery').forEach(g=>{const t=g.querySelector('.track'),c=g.querySelector('.count b');
@@ -313,7 +339,7 @@ function summary(){const v=Object.values(S),c=f=>v.filter(x=>x[f]).length;
  $('#nsum').textContent=`${c('fav')} favourites, ${c('viewed')} viewed, ${c('contacted')} contacted, ${v.filter(x=>(x.r||'').trim()).length} with remarks`;
  $('#jump').hidden=!LAST||!BY[LAST];if(LAST&&BY[LAST])$('#jump').textContent=`Last viewed: ${BY[LAST].n}`}
 function focusCard(k,instant){if(view!=='list')setView('list');CUR=filtered();let idx=CUR.findIndex(i=>i.k===k);
- if(idx<0){on.clear();$$('.chip').forEach(b=>b.setAttribute('aria-pressed','false'));$('#q').value='';TAGS=[];renderTags();on.add('unf');$('.chip[data-f=unf]').setAttribute('aria-pressed','true');CUR=filtered();idx=CUR.findIndex(i=>i.k===k)}
+ if(idx<0){on.clear();$$('.chip').forEach(b=>b.setAttribute('aria-pressed','false'));$('#q').value='';TAGS=[];renderTags();if(!$('#searchbar').hidden)closeSearch();on.add('unf');$('.chip[data-f=unf]').setAttribute('aria-pressed','true');CUR=filtered();idx=CUR.findIndex(i=>i.k===k)}
  if(idx>=shown)shown=idx+6;draw();const el=document.querySelector(`.card[data-key="${CSS.escape(k)}"]`);
  if(el){const smooth=!instant&&!matchMedia('(prefers-reduced-motion: reduce)').matches;el.scrollIntoView({block:'start',behavior:smooth?'smooth':'auto'});
   el.classList.remove('flash');void el.offsetWidth;el.classList.add('flash');
@@ -338,7 +364,7 @@ document.addEventListener('click',ev=>{
 let tmr;document.addEventListener('input',ev=>{const t=ev.target;
  if(t.tagName==='TEXTAREA'&&t.closest('.notes')){const k=t.closest('.notes').dataset.key,n=st(k);n.r=t.value;n.ts=Date.now();clearTimeout(tmr);
   tmr=setTimeout(()=>{save();const p=t.closest('.notes').querySelector('.saved');if(p)p.textContent='Saved '+when(n.ts)},400);return}
- if(['q','sort'].includes(t.id)){shown=18;draw()}});
+ if(t.id==='q'){shown=18;draw()}});
 $('#more').onclick=()=>{shown+=18;draw()};
 $('#jump').onclick=()=>LAST&&focusCard(LAST);
 $('#exp').onclick=()=>{const b=new Blob([JSON.stringify({app:'findingstay',saved:new Date().toISOString(),last:LAST,notes:S},null,1)],{type:'application/json'});
@@ -349,9 +375,9 @@ $('#imp').onchange=async ev=>{const f=ev.target.files[0];if(!f)return;try{const 
 
 // ---------- map ----------
 let map,layer;
-function setView(v){view=v;$$('.views button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===v));
+function setView(v){view=v;const sp=$('#viewPill').children;sp[0].classList.toggle('on',v==='list');sp[1].classList.toggle('on',v==='map');
  $('#feed').hidden=v!=='list';$('#more').hidden=v!=='list'||CUR.length<=shown;$('#map').hidden=v!=='map';draw();if(v==='map')setTimeout(()=>map&&map.invalidateSize(),50)}
-$$('.views button').forEach(b=>b.onclick=()=>setView(b.dataset.v));
+$('#viewPill').onclick=()=>setView(view==='list'?'map':'list');
 function drawMap(){if(!window.L){$('#map').innerHTML='<p class="nophoto">The map needs an internet connection.</p>';return}
  if(!map){map=L.map('map',{scrollWheelZoom:true}).setView(OFFICE,14);
   const dark=document.documentElement.dataset.theme==='dark'||(document.documentElement.dataset.theme!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches);
@@ -392,14 +418,33 @@ $('#q').addEventListener('input',suggest);
 $('#q').addEventListener('keydown',ev=>{const u=$('#sugg');
  if(ev.key==='ArrowDown'){ev.preventDefault();if(u.hidden)suggest();act=Math.min(SUG.length-1,act+1);paintSug()}
  else if(ev.key==='ArrowUp'){ev.preventDefault();act=Math.max(0,act-1);paintSug()}
- else if(ev.key==='Enter'){ev.preventDefault();if(act>=0&&SUG[act])addTag(SUG[act]);else if($('#q').value.trim())addTag({g:'q',v:$('#q').value.trim().toLowerCase()});else{closeSug();$('#q').blur()}}
- else if(ev.key==='Escape'){closeSug()}
+ else if(ev.key==='Enter'){ev.preventDefault();if(act>=0&&SUG[act])addTag(SUG[act]);else if($('#q').value.trim())addTag({g:'q',v:$('#q').value.trim().toLowerCase()});else closeSearch()}
+ else if(ev.key==='Escape'){ev.stopPropagation();closeSearch()}
  else if(ev.key==='Backspace'&&!$('#q').value&&TAGS.length){TAGS.pop();renderTags();shown=18;draw();suggest()}});
 $('#sugg').addEventListener('mousedown',ev=>ev.preventDefault());
 $('#sugg').addEventListener('click',ev=>{const li=ev.target.closest('[data-opt]');if(li)addTag(SUG[+li.dataset.opt])});
 document.addEventListener('click',ev=>{const x=ev.target.closest('[data-untag]');if(x){TAGS.splice(+x.dataset.untag,1);renderTags();shown=18;draw();return}
  if(!ev.target.closest('#sbox,#sugg'))closeSug()});
 $('#sbox').addEventListener('click',ev=>{if(!ev.target.closest('button'))$('#q').focus()});
+function searchLabel(){const sp=$('#searchPill'),typed=$('#q').value.trim();const n=TAGS.length+(typed?1:0);
+ if(!n){sp.textContent='Search';sp.setAttribute('aria-pressed','false');return}
+ const first=TAGS[0]?TL[TAGS[0].g]+TAGS[0].v+(TAGS[0].g==='q'?'”':''):'“'+typed+'”';
+ sp.textContent=`${first}${n>1?' +'+(n-1):''} · ${CUR.length}`;sp.setAttribute('aria-pressed','true')}
+function openSearch(){closeSort();$('#row').hidden=true;$('#searchbar').hidden=false;$('#q').focus();suggest()}
+function closeSearch(){const t=$('#q').value.trim();if(t){TAGS.push({g:'q',v:t.toLowerCase()});$('#q').value='';renderTags();draw()}
+ closeSug();$('#searchbar').hidden=true;$('#row').hidden=false;searchLabel()}
+$('#searchPill').onclick=openSearch;$('#sdone').onclick=closeSearch;
+function openSort(){const m=$('#sortmenu'),b=$('#sortPill').getBoundingClientRect(),bar=$('#bar').getBoundingClientRect();m.hidden=false;
+ m.style.left=Math.max(8,Math.min(b.left-bar.left,bar.width-m.offsetWidth-8))+'px';$('#sortPill').setAttribute('aria-expanded','true')}
+function closeSort(){$('#sortmenu').hidden=true;$('#sortPill').setAttribute('aria-expanded','false')}
+$('#sortPill').onclick=()=>$('#sortmenu').hidden?openSort():closeSort();
+$('#sortmenu').addEventListener('click',ev=>{const li=ev.target.closest('[data-sort]');if(!li)return;SORT=li.dataset.sort;
+ $$('#sortmenu li').forEach(x=>x.setAttribute('aria-selected',x===li));$('#sortPill').textContent={best:'Top picks',near:'Nearest',price:'Cheapest',recent:'Recent'}[SORT];
+ closeSort();shown=18;draw()});
+$('#row').addEventListener('scroll',closeSort,{passive:true});
+document.addEventListener('keydown',ev=>{if(ev.key==='Escape'){if(!$('#sortmenu').hidden)closeSort();else if(!$('#searchbar').hidden)closeSearch()}});
+document.addEventListener('click',ev=>{if(!ev.target.closest('#sortPill,#sortmenu'))closeSort();
+ if(!$('#searchbar').hidden&&!ev.target.closest('#searchbar,#sugg,#searchPill,[data-untag]'))closeSearch()});
 function openFromHash(){const m=location.hash.match(/^#u=([0-9a-f]{8})$/);if(m&&BYID[m[1]])setTimeout(()=>focusCard(BYID[m[1]].k,true),60)}
 window.addEventListener('hashchange',openFromHash);
 const tt=$('#totop');addEventListener('scroll',()=>{tt.hidden=scrollY<600},{passive:true});
