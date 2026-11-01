@@ -1,6 +1,6 @@
 import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js";
 
-const N = 2600;
+const N = 3600;
 
 // ---------- small math helpers ----------
 function gauss(){
@@ -137,66 +137,66 @@ function drawScreenFrame(ctx, cx, cy, s){
 }
 
 // ---------- per-chapter scenes, composed from the primitives above ----------
-const SCENE_W = 300, SCENE_H = 400;
+const SCENE_W = 300, SCENE_H = 460;
 
 const SCENES = {
   // ch1 — "A Match, Almost Missed": two figures, far apart, not yet together
   apart(ctx){
-    drawMale(ctx, SCENE_W*0.24, SCENE_H*0.58, 150);
-    drawFemale(ctx, SCENE_W*0.76, SCENE_H*0.58, 145);
+    drawMale(ctx, SCENE_W*0.27, SCENE_H*0.56, 220);
+    drawFemale(ctx, SCENE_W*0.73, SCENE_H*0.56, 210);
   },
   // ch2 — "We Finally Met": standing close, facing each other
   together(ctx){
-    drawMale(ctx, SCENE_W*0.42, SCENE_H*0.56, 190);
-    drawFemale(ctx, SCENE_W*0.6, SCENE_H*0.56, 180);
+    drawMale(ctx, SCENE_W*0.41, SCENE_H*0.54, 250);
+    drawFemale(ctx, SCENE_W*0.6, SCENE_H*0.54, 235);
   },
   // ch3 — "Falling, Quietly and Surely": together, with a heart forming above them
   togetherHeart(ctx){
-    drawMale(ctx, SCENE_W*0.42, SCENE_H*0.6, 185);
-    drawFemale(ctx, SCENE_W*0.6, SCENE_H*0.6, 175);
-    drawHeart(ctx, SCENE_W*0.5, SCENE_H*0.22, 90);
+    drawMale(ctx, SCENE_W*0.41, SCENE_H*0.58, 230);
+    drawFemale(ctx, SCENE_W*0.6, SCENE_H*0.58, 215);
+    drawHeart(ctx, SCENE_W*0.5, SCENE_H*0.2, 140);
   },
   // ch4 — "Our Weekend Kitchen": together, a mug between them
   togetherMug(ctx){
-    drawMale(ctx, SCENE_W*0.35, SCENE_H*0.56, 190);
-    drawFemale(ctx, SCENE_W*0.67, SCENE_H*0.56, 180);
-    drawMugSmall(ctx, SCENE_W*0.51, SCENE_H*0.5, 90);
+    drawMale(ctx, SCENE_W*0.33, SCENE_H*0.54, 240);
+    drawFemale(ctx, SCENE_W*0.68, SCENE_H*0.54, 225);
+    drawMugSmall(ctx, SCENE_W*0.505, SCENE_H*0.47, 130);
   },
   // ch5 — "Fireflies, and a Calico Named KuaCham": together, cat at their feet
   togetherCat(ctx){
-    drawMale(ctx, SCENE_W*0.4, SCENE_H*0.48, 170);
-    drawFemale(ctx, SCENE_W*0.62, SCENE_H*0.48, 160);
-    drawCat(ctx, SCENE_W*0.51, SCENE_H*0.82, 100);
+    drawMale(ctx, SCENE_W*0.39, SCENE_H*0.4, 220);
+    drawFemale(ctx, SCENE_W*0.63, SCENE_H*0.4, 208);
+    drawCat(ctx, SCENE_W*0.51, SCENE_H*0.82, 170);
   },
   // ch6 — "Meeting My Family, From Miles Away": me on one side, family on a screen
   videoCall(ctx){
-    drawMale(ctx, SCENE_W*0.25, SCENE_H*0.56, 190);
-    drawScreenFrame(ctx, SCENE_W*0.72, SCENE_H*0.5, 230);
+    drawMale(ctx, SCENE_W*0.29, SCENE_H*0.52, 240);
+    drawScreenFrame(ctx, SCENE_W*0.65, SCENE_H*0.46, 250);
   },
   // ch7 — "Our Family Kept Growing": the couple, surrounded by four cats
   family(ctx){
-    drawMale(ctx, SCENE_W*0.43, SCENE_H*0.56, 130);
-    drawFemale(ctx, SCENE_W*0.58, SCENE_H*0.56, 125);
-    drawCat(ctx, SCENE_W*0.14, SCENE_H*0.78, 75);
-    drawCat(ctx, SCENE_W*0.86, SCENE_H*0.78, 75);
-    drawCat(ctx, SCENE_W*0.16, SCENE_H*0.32, 68);
-    drawCat(ctx, SCENE_W*0.84, SCENE_H*0.32, 68);
+    drawCat(ctx, SCENE_W*0.3, SCENE_H*0.25, 155);
+    drawCat(ctx, SCENE_W*0.7, SCENE_H*0.25, 155);
+    drawCat(ctx, SCENE_W*0.3, SCENE_H*0.78, 155);
+    drawCat(ctx, SCENE_W*0.7, SCENE_H*0.78, 155);
+    drawMale(ctx, SCENE_W*0.42, SCENE_H*0.52, 200);
+    drawFemale(ctx, SCENE_W*0.59, SCENE_H*0.52, 190);
   },
   // ch8 — "Home, At Last": the couple standing before a house
   homeCouple(ctx){
-    drawHouse(ctx, SCENE_W*0.5, SCENE_H*0.36, 210);
-    drawMale(ctx, SCENE_W*0.43, SCENE_H*0.78, 130);
-    drawFemale(ctx, SCENE_W*0.58, SCENE_H*0.78, 125);
+    drawHouse(ctx, SCENE_W*0.5, SCENE_H*0.35, 300);
+    drawMale(ctx, SCENE_W*0.41, SCENE_H*0.76, 220);
+    drawFemale(ctx, SCENE_W*0.6, SCENE_H*0.76, 210);
   },
   // ch9 — "The Nikah": the couple standing under a dome arch — the grand finale
   nikahCouple(ctx){
-    drawDomeArch(ctx, SCENE_W*0.5, SCENE_H*0.38, 260);
-    drawMale(ctx, SCENE_W*0.44, SCENE_H*0.76, 150);
-    drawFemale(ctx, SCENE_W*0.57, SCENE_H*0.76, 145);
+    drawDomeArch(ctx, SCENE_W*0.5, SCENE_H*0.35, 300);
+    drawMale(ctx, SCENE_W*0.41, SCENE_H*0.75, 210);
+    drawFemale(ctx, SCENE_W*0.6, SCENE_H*0.75, 200);
   },
   // RSVP / footer — calm, a single heart
   heartCalm(ctx){
-    drawHeart(ctx, SCENE_W*0.5, SCENE_H*0.5, 230);
+    drawHeart(ctx, SCENE_W*0.5, SCENE_H*0.5, 220);
   }
 };
 
@@ -250,7 +250,7 @@ function sampleScene(sceneFn, count){
     }
   }
 
-  const worldW = 5.6, worldH = 7.4;
+  const worldW = 6.0, worldH = 9.25;
   const n = validX.length;
   for (let i = 0; i < count; i++){
     let px, py;
@@ -273,7 +273,8 @@ function makeSpriteTexture(){
   const ctx = c.getContext('2d');
   const g = ctx.createRadialGradient(size/2, size/2, 0, size/2, size/2, size/2);
   g.addColorStop(0, 'rgba(255,255,255,1)');
-  g.addColorStop(0.4, 'rgba(255,255,255,0.6)');
+  g.addColorStop(0.55, 'rgba(255,255,255,0.95)');
+  g.addColorStop(0.8, 'rgba(255,255,255,0.4)');
   g.addColorStop(1, 'rgba(255,255,255,0)');
   ctx.fillStyle = g;
   ctx.fillRect(0, 0, size, size);
@@ -299,7 +300,7 @@ function init(){
 
   threeScene = new THREE.Scene();
   camera = new THREE.PerspectiveCamera(48, window.innerWidth / window.innerHeight, 0.1, 100);
-  camera.position.set(0, 0, 10.5);
+  camera.position.set(0, 0, 11);
   camera.lookAt(0, 0, 0);
 
   // precompute every formation's particle positions once, up front
