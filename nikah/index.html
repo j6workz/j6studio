@@ -124,46 +124,66 @@
   footer p.note{ max-width:400px; margin:26px auto 0; font-size:13px; color:rgba(246,241,231,.6); line-height:1.7; }
 
   @media(prefers-reduced-motion:reduce){ *{ animation-duration:.001ms !important; transition-duration:.001ms !important; } }
+
+  .lang-toggle{
+    position:fixed; top:calc(16px + env(safe-area-inset-top)); right:calc(16px + env(safe-area-inset-right)); z-index:50;
+    display:flex; background:rgba(246,241,231,.12); border:1px solid rgba(246,241,231,.35); border-radius:999px;
+    padding:3px; backdrop-filter:blur(6px);
+  }
+  .lang-toggle button{
+    border:none; background:none; color:rgba(246,241,231,.75); font-family:'Jost',sans-serif; font-size:11px;
+    letter-spacing:.08em; padding:6px 12px; border-radius:999px; cursor:pointer; transition:background .2s ease, color .2s ease;
+  }
+  .lang-toggle button.active{ background:var(--gold-soft); color:var(--sage-deep); font-weight:600; }
+  /* sections past the hero sit on a light background, so the toggle needs a dark-on-light variant once scrolled */
+  .lang-toggle.on-light{ background:rgba(73,87,63,.08); border-color:var(--line); }
+  .lang-toggle.on-light button{ color:var(--ink-soft); }
+  .lang-toggle.on-light button.active{ background:var(--sage-deep); color:var(--sand); }
 </style>
 </head>
 <body>
 
-<section class="hero">
+<div class="lang-toggle" id="langToggle">
+  <button type="button" id="btnEn" data-lang="en">EN</button>
+  <button type="button" id="btnId" data-lang="id">ID</button>
+</div>
+
+<section class="hero" id="hero">
   <div class="bismillah arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
-  <div class="eyebrow">With the blessings of our families</div>
+  <div class="eyebrow" data-i18n="hero.eyebrow">With the blessings of our families</div>
   <h1>Jawahar<span class="weds">&amp; — Nikah — &amp;</span>Ferina</h1>
   <div class="nicknames">J6 &amp; Fer</div>
-  <div class="date-pill">11 NOVEMBER 2026 · JAKARTA</div>
-  <div class="scroll-cue"><span class="line"></span>SCROLL</div>
+  <div class="date-pill" data-i18n="hero.date">11 NOVEMBER 2026 · JAKARTA</div>
+  <div class="scroll-cue"><span class="line"></span><span data-i18n="hero.scroll">SCROLL</span></div>
 </section>
 
 <section class="verse center">
   <div class="container">
-    <div class="eyebrow">A VERSE FOR OUR BEGINNING</div>
+    <div class="eyebrow" data-i18n="verse.eyebrow">A VERSE FOR OUR BEGINNING</div>
     <div class="motif"></div>
     <div class="arabic">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً</div>
-    <p class="translation">"And among His signs is that He created for you mates from among yourselves, that you may dwell in tranquility with them, and He placed between you affection and mercy. Indeed in that are signs for a people who reflect."</p>
-    <cite>Qur'an, Surah Ar-Rūm 30:21</cite>
+    <p class="translation" data-i18n="verse.translation">"And among His signs is that He created for you mates from among yourselves, that you may dwell in tranquility with them, and He placed between you affection and mercy. Indeed in that are signs for a people who reflect."</p>
+    <cite data-i18n="verse.citation">Qur'an, Surah Ar-Rūm 30:21</cite>
   </div>
 </section>
 
 <section class="events" id="events">
   <div class="container center">
-    <div class="eyebrow">SAVE THE DATE</div>
-    <h2 style="margin-top:8px;">Our Celebrations</h2>
+    <div class="eyebrow" data-i18n="events.eyebrow">SAVE THE DATE</div>
+    <h2 style="margin-top:8px;" data-i18n="events.heading">Our Celebrations</h2>
     <div class="motif on-deep"></div>
   </div>
   <div class="container event-list">
     <div class="event">
       <div class="icon">🕌</div>
-      <h3>Akad Nikah</h3>
-      <div class="when">Wednesday, 11 November 2026 · 11:00 AM WIB</div>
+      <h3 data-i18n="events.akad.title">Akad Nikah</h3>
+      <div class="when" data-i18n="events.akad.when">Wednesday, 11 November 2026 · 11:00 AM WIB</div>
       <div class="where">KUA Kecamatan Kemayoran<br><small>Jakarta, Indonesia</small></div>
     </div>
     <div class="event">
       <div class="icon">✦</div>
-      <h3>Reception</h3>
-      <div class="when">Wednesday, 11 November 2026 · 12:00 PM – 3:00 PM WIB</div>
+      <h3 data-i18n="events.reception.title">Reception</h3>
+      <div class="when" data-i18n="events.reception.when">Wednesday, 11 November 2026 · 12:00 PM – 3:00 PM WIB</div>
       <div class="where">Ayda Hotel<br><small>Jakarta, Indonesia</small></div>
     </div>
   </div>
@@ -171,49 +191,49 @@
 
 <section class="message center">
   <div class="container">
-    <div class="eyebrow">A MESSAGE FROM US</div>
+    <div class="eyebrow" data-i18n="message.eyebrow">A MESSAGE FROM US</div>
     <div class="motif"></div>
-    <blockquote>With gratitude to Allah and the blessings of our families, we invite you to witness our akad and celebrate with us afterward. Two families, two faiths, one beginning — your presence would mean so much to us.</blockquote>
+    <blockquote data-i18n="message.body">With gratitude to Allah and the blessings of our families, we invite you to witness our akad and celebrate with us afterward. Two families, two faiths, one beginning — your presence would mean so much to us.</blockquote>
   </div>
 </section>
 
 <section class="rsvp center" id="rsvp">
   <div class="container">
-    <div class="eyebrow">KINDLY RESPOND BY 8 NOVEMBER</div>
-    <h2 style="margin-top:8px; color:var(--sand);">RSVP</h2>
-    <p class="lead">Let us know if you'll be able to join us — it helps us plan the day.</p>
+    <div class="eyebrow" data-i18n="rsvp.eyebrow">KINDLY RESPOND BY 8 NOVEMBER</div>
+    <h2 style="margin-top:8px; color:var(--sand);" data-i18n="rsvp.heading">RSVP</h2>
+    <p class="lead" data-i18n="rsvp.lead">Let us know if you'll be able to join us — it helps us plan the day.</p>
 
     <form id="rsvpForm">
       <div class="field">
-        <label for="f-name">Full name</label>
-        <input type="text" id="f-name" name="name" placeholder="Your name" required maxlength="100">
+        <label for="f-name" data-i18n="rsvp.name.label">Full name</label>
+        <input type="text" id="f-name" name="name" placeholder="Your name" data-i18n-placeholder="rsvp.name.placeholder" required maxlength="100">
       </div>
 
       <div class="field">
-        <label>Will you be attending?</label>
+        <label data-i18n="rsvp.attending.label">Will you be attending?</label>
         <div class="attend-toggle">
-          <label><input type="radio" name="attending" value="yes" required><span>✓ Joyfully attending</span></label>
-          <label><input type="radio" name="attending" value="no"><span>Can't make it</span></label>
+          <label><input type="radio" name="attending" value="yes" required><span data-i18n="rsvp.attending.yes">✓ Joyfully attending</span></label>
+          <label><input type="radio" name="attending" value="no"><span data-i18n="rsvp.attending.no">Can't make it</span></label>
         </div>
       </div>
 
       <div class="field">
-        <label for="f-guests">Number of guests (including you)</label>
-        <input type="text" inputmode="numeric" id="f-guests" name="guests" placeholder="e.g. 2" maxlength="2">
+        <label for="f-guests" data-i18n="rsvp.guests.label">Number of guests (including you)</label>
+        <input type="text" inputmode="numeric" id="f-guests" name="guests" placeholder="e.g. 2" data-i18n-placeholder="rsvp.guests.placeholder" maxlength="2">
       </div>
 
       <div class="field">
-        <label for="f-phone">Phone / WhatsApp</label>
-        <input type="tel" id="f-phone" name="phone" placeholder="For updates, optional" maxlength="20">
+        <label for="f-phone" data-i18n="rsvp.phone.label">Phone / WhatsApp</label>
+        <input type="tel" id="f-phone" name="phone" placeholder="For updates, optional" data-i18n-placeholder="rsvp.phone.placeholder" maxlength="20">
       </div>
 
       <div class="field">
-        <label for="f-message">Message to the couple (optional)</label>
-        <textarea id="f-message" name="message" placeholder="Leave us a note..." maxlength="500"></textarea>
+        <label for="f-message" data-i18n="rsvp.message.label">Message to the couple (optional)</label>
+        <textarea id="f-message" name="message" placeholder="Leave us a note..." data-i18n-placeholder="rsvp.message.placeholder" maxlength="500"></textarea>
       </div>
 
-      <button type="submit" class="rsvp-submit" id="rsvpSubmit">Send RSVP</button>
-      <div class="rsvp-note">Your response goes straight to us — thank you for letting us know.</div>
+      <button type="submit" class="rsvp-submit" id="rsvpSubmit" data-i18n="rsvp.submit">Send RSVP</button>
+      <div class="rsvp-note" data-i18n="rsvp.note">Your response goes straight to us — thank you for letting us know.</div>
       <div class="rsvp-status" id="rsvpStatus"></div>
     </form>
   </div>
@@ -222,14 +242,14 @@
 <footer>
   <div class="mark">J6 &amp; Fer</div>
   <h2>Jawahar &amp; Ferina</h2>
-  <div class="eyebrow">THE COUNTDOWN BEGINS</div>
+  <div class="eyebrow" data-i18n="footer.eyebrow">THE COUNTDOWN BEGINS</div>
   <div id="countdown">
-    <div class="unit"><div class="num" id="cd-days">00</div><div class="label">DAYS</div></div>
-    <div class="unit"><div class="num" id="cd-hours">00</div><div class="label">HOURS</div></div>
-    <div class="unit"><div class="num" id="cd-mins">00</div><div class="label">MINUTES</div></div>
-    <div class="unit"><div class="num" id="cd-secs">00</div><div class="label">SECONDS</div></div>
+    <div class="unit"><div class="num" id="cd-days">00</div><div class="label" data-i18n="footer.days">DAYS</div></div>
+    <div class="unit"><div class="num" id="cd-hours">00</div><div class="label" data-i18n="footer.hours">HOURS</div></div>
+    <div class="unit"><div class="num" id="cd-mins">00</div><div class="label" data-i18n="footer.mins">MINUTES</div></div>
+    <div class="unit"><div class="num" id="cd-secs">00</div><div class="label" data-i18n="footer.secs">SECONDS</div></div>
   </div>
-  <p class="note">With Allah's blessing and our families' love, we can't wait to celebrate this day with you.</p>
+  <p class="note" data-i18n="footer.note">With Allah's blessing and our families' love, we can't wait to celebrate this day with you.</p>
 </footer>
 
 <script>
@@ -242,6 +262,157 @@
     document.getElementById('cd-secs').textContent = String(Math.floor((diff%60000)/1000)).padStart(2,'0');
   }
   tick(); setInterval(tick, 1000);
+</script>
+
+<script>
+(function(){
+  const STRINGS = {
+    en: {
+      'hero.eyebrow': 'With the blessings of our families',
+      'hero.date': '11 NOVEMBER 2026 · JAKARTA',
+      'hero.scroll': 'SCROLL',
+      'verse.eyebrow': 'A VERSE FOR OUR BEGINNING',
+      'verse.translation': '"And among His signs is that He created for you mates from among yourselves, that you may dwell in tranquility with them, and He placed between you affection and mercy. Indeed in that are signs for a people who reflect."',
+      'verse.citation': "Qur'an, Surah Ar-Rūm 30:21",
+      'events.eyebrow': 'SAVE THE DATE',
+      'events.heading': 'Our Celebrations',
+      'events.akad.title': 'Akad Nikah',
+      'events.akad.when': 'Wednesday, 11 November 2026 · 11:00 AM WIB',
+      'events.reception.title': 'Reception',
+      'events.reception.when': 'Wednesday, 11 November 2026 · 12:00 PM – 3:00 PM WIB',
+      'message.eyebrow': 'A MESSAGE FROM US',
+      'message.body': 'With gratitude to Allah and the blessings of our families, we invite you to witness our akad and celebrate with us afterward. Two families, two faiths, one beginning — your presence would mean so much to us.',
+      'rsvp.eyebrow': 'KINDLY RESPOND BY 8 NOVEMBER',
+      'rsvp.heading': 'RSVP',
+      'rsvp.lead': "Let us know if you'll be able to join us — it helps us plan the day.",
+      'rsvp.name.label': 'Full name',
+      'rsvp.name.placeholder': 'Your name',
+      'rsvp.attending.label': 'Will you be attending?',
+      'rsvp.attending.yes': '✓ Joyfully attending',
+      'rsvp.attending.no': "Can't make it",
+      'rsvp.guests.label': 'Number of guests (including you)',
+      'rsvp.guests.placeholder': 'e.g. 2',
+      'rsvp.phone.label': 'Phone / WhatsApp',
+      'rsvp.phone.placeholder': 'For updates, optional',
+      'rsvp.message.label': 'Message to the couple (optional)',
+      'rsvp.message.placeholder': 'Leave us a note...',
+      'rsvp.submit': 'Send RSVP',
+      'rsvp.submitting': 'Sending...',
+      'rsvp.note': 'Your response goes straight to us — thank you for letting us know.',
+      'rsvp.thanks.yes': "Thank you, {name}! We can't wait to celebrate with you. 🤍",
+      'rsvp.thanks.no': "Thank you for letting us know, {name}. You'll be missed!",
+      'rsvp.error': 'Something went wrong sending your RSVP — please try again, or message us directly.',
+      'footer.eyebrow': 'THE COUNTDOWN BEGINS',
+      'footer.days': 'DAYS', 'footer.hours': 'HOURS', 'footer.mins': 'MINUTES', 'footer.secs': 'SECONDS',
+      'footer.note': "With Allah's blessing and our families' love, we can't wait to celebrate this day with you.",
+      'doc.title': 'Jawahar & Ferina — Nikah'
+    },
+    id: {
+      'hero.eyebrow': 'Dengan restu kedua keluarga kami',
+      'hero.date': '11 NOVEMBER 2026 · JAKARTA',
+      'hero.scroll': 'GULIR',
+      'verse.eyebrow': 'SEBUAH AYAT UNTUK AWAL KAMI',
+      'verse.translation': '"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."',
+      'verse.citation': "Al-Qur'an, Surah Ar-Rūm 30:21",
+      'events.eyebrow': 'SIMPAN TANGGALNYA',
+      'events.heading': 'Acara Pernikahan Kami',
+      'events.akad.title': 'Akad Nikah',
+      'events.akad.when': 'Rabu, 11 November 2026 · 11:00 WIB',
+      'events.reception.title': 'Resepsi',
+      'events.reception.when': 'Rabu, 11 November 2026 · 12:00 – 15:00 WIB',
+      'message.eyebrow': 'PESAN DARI KAMI',
+      'message.body': 'Dengan rasa syukur kepada Allah dan restu dari kedua keluarga, kami mengundang Anda untuk menyaksikan akad kami dan merayakannya bersama kami. Dua keluarga, dua keyakinan, satu awal yang baru — kehadiran Anda akan sangat berarti bagi kami.',
+      'rsvp.eyebrow': 'MOHON KONFIRMASI SEBELUM 8 NOVEMBER',
+      'rsvp.heading': 'RSVP',
+      'rsvp.lead': 'Beri tahu kami jika Anda bisa hadir — ini akan membantu kami mempersiapkan acara.',
+      'rsvp.name.label': 'Nama lengkap',
+      'rsvp.name.placeholder': 'Nama Anda',
+      'rsvp.attending.label': 'Apakah Anda akan hadir?',
+      'rsvp.attending.yes': '✓ Dengan senang hati hadir',
+      'rsvp.attending.no': 'Tidak bisa hadir',
+      'rsvp.guests.label': 'Jumlah tamu (termasuk Anda)',
+      'rsvp.guests.placeholder': 'misalnya 2',
+      'rsvp.phone.label': 'Telepon / WhatsApp',
+      'rsvp.phone.placeholder': 'Untuk info lebih lanjut, opsional',
+      'rsvp.message.label': 'Pesan untuk pengantin (opsional)',
+      'rsvp.message.placeholder': 'Tulis pesan untuk kami...',
+      'rsvp.submit': 'Kirim RSVP',
+      'rsvp.submitting': 'Mengirim...',
+      'rsvp.note': 'Jawaban Anda akan langsung sampai ke kami — terima kasih sudah memberi tahu kami.',
+      'rsvp.thanks.yes': 'Terima kasih, {name}! Kami tidak sabar untuk merayakan bersama Anda. 🤍',
+      'rsvp.thanks.no': 'Terima kasih sudah memberi tahu kami, {name}. Anda akan sangat dirindukan!',
+      'rsvp.error': 'Maaf, terjadi kesalahan saat mengirim RSVP Anda — silakan coba lagi, atau hubungi kami langsung.',
+      'footer.eyebrow': 'HITUNG MUNDUR DIMULAI',
+      'footer.days': 'HARI', 'footer.hours': 'JAM', 'footer.mins': 'MENIT', 'footer.secs': 'DETIK',
+      'footer.note': 'Dengan izin Allah dan restu kedua keluarga, kami tidak sabar untuk merayakan hari ini bersama Anda.',
+      'doc.title': 'Jawahar & Ferina — Nikah'
+    }
+  };
+
+  let currentLocale = 'en';
+  function t(key){ return (STRINGS[currentLocale] && STRINGS[currentLocale][key]) || STRINGS.en[key] || key; }
+  window.i18nText = t;
+
+  function applyLocale(lang){
+    if (!STRINGS[lang]) lang = 'en';
+    currentLocale = lang;
+    document.documentElement.lang = lang;
+    document.title = t('doc.title');
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      el.textContent = t(el.getAttribute('data-i18n'));
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){
+      el.setAttribute('placeholder', t(el.getAttribute('data-i18n-placeholder')));
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(function(btn){
+      btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+  }
+  window.applyNikahLocale = applyLocale;
+
+  function setLocale(lang, persist){
+    applyLocale(lang);
+    if (persist) {
+      try { localStorage.setItem('nikah_locale', lang); } catch(e){}
+    }
+  }
+
+  document.querySelectorAll('.lang-toggle button').forEach(function(btn){
+    btn.addEventListener('click', function(){ setLocale(btn.getAttribute('data-lang'), true); });
+  });
+
+  // keep the toggle legible: dark style over the hero, light-background style past it
+  const hero = document.getElementById('hero');
+  const toggle = document.getElementById('langToggle');
+  if (hero && toggle && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        toggle.classList.toggle('on-light', !entry.isIntersecting);
+      });
+    }, { threshold: 0.15 }).observe(hero);
+  }
+
+  // 1) instant guess from the browser's own language so there's no flash of the wrong copy
+  let saved = null;
+  try { saved = localStorage.getItem('nikah_locale'); } catch(e){}
+  if (saved === 'en' || saved === 'id') {
+    applyLocale(saved);
+  } else {
+    const browserLang = (navigator.language || (navigator.languages && navigator.languages[0]) || 'en').toLowerCase();
+    applyLocale(browserLang.startsWith('id') ? 'id' : 'en');
+
+    // 2) refine using an IP country lookup, since many visitors in Indonesia browse in English
+    const ctrl = new AbortController();
+    const timeout = setTimeout(function(){ ctrl.abort(); }, 2500);
+    fetch('https://get.geojs.io/v1/ip/country.json', { signal: ctrl.signal })
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        clearTimeout(timeout);
+        if (data && data.country === 'ID') applyLocale('id');
+      })
+      .catch(function(){ /* geolocation unavailable — keep the browser-language guess */ });
+  }
+})();
 </script>
 
 <script type="module">
@@ -275,8 +446,9 @@
 
     if (!name || !attending) return;
 
+    const t = window.i18nText || ((k) => k);
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
+    submitBtn.textContent = t('rsvp.submitting');
     status.className = 'rsvp-status';
 
     try {
@@ -286,15 +458,13 @@
       });
       form.reset();
       form.style.display = 'none';
-      status.textContent = attending === 'yes'
-        ? `Thank you, ${name}! We can't wait to celebrate with you. 🤍`
-        : `Thank you for letting us know, ${name}. You'll be missed!`;
+      status.textContent = t(attending === 'yes' ? 'rsvp.thanks.yes' : 'rsvp.thanks.no').replace('{name}', name);
       status.classList.add('show', 'ok');
     } catch (err) {
-      status.textContent = 'Something went wrong sending your RSVP — please try again, or message us directly.';
+      status.textContent = t('rsvp.error');
       status.classList.add('show', 'err');
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Send RSVP';
+      submitBtn.textContent = t('rsvp.submit');
     }
   });
 </script>
