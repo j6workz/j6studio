@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 90" role="img" aria-label="Botanical ornamental divider">
+<g fill="none" stroke="#42664C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<path d="M35 45 H765 M390 45 C365 20 340 20 320 45 C340 70 365 70 390 45 C410 20 435 20 455 45 C435 70 410 70 390 45"/>
+<path d="M320 45 C290 12 270 18 252 28 C270 52 292 58 320 45 M455 45 C485 12 505 18 523 28 C505 52 483 58 455 45"/>
+<path d="M252 28 C230 8 214 10 200 17 C218 37 235 39 252 28 M523 28 C545 8 561 10 575 17 C557 37 540 39 523 28"/>
+<path d="M200 17 C180 4 165 6 150 12 C166 29 183 29 200 17 M575 17 C595 4 610 6 625 12 C609 29 592 29 575 17"/>
+<path d="M390 45 C385 31 390 23 400 16 C410 23 415 31 410 45 C405 55 395 55 390 45Z"/>
+</g></svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 620" role="img" aria-label="Minimal botanical wedding frame">
+<rect x="22" y="22" width="456" height="576" rx="18" fill="none" stroke="#A8BBA0" stroke-width="3"/>
+<rect x="34" y="34" width="432" height="552" rx="14" fill="none" stroke="#C9AD78" stroke-width="1.5"/>
+<g fill="none" stroke="#42664C" stroke-width="3" stroke-linecap="round">
+<path d="M25 150 C70 145 82 110 98 70 M25 190 C58 182 76 158 88 126 M475 470 C430 475 418 510 402 550 M475 430 C442 438 424 462 412 494"/>
+<path d="M98 70 C70 55 57 58 46 68 C63 88 81 88 98 70 M88 126 C61 111 49 115 40 126 C56 143 73 143 88 126"/>
+<path d="M402 550 C430 565 443 562 454 552 C437 532 419 532 402 550 M412 494 C439 509 451 505 460 494 C444 477 427 477 412 494"/>
+</g></svg>
