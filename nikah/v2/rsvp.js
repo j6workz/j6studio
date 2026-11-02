@@ -39,6 +39,16 @@ form.addEventListener('submit', async (e) => {
       source: 'v2',
       submitted_at: serverTimestamp()
     });
+    await addDoc(collection(db, 'wishes'), {
+      name, attending, guests, message,
+      source: 'v2',
+      submitted_at: serverTimestamp()
+    });
+    if (phone) {
+      await addDoc(collection(db, 'rsvp_contacts'), {
+        name, phone, source: 'v2', submitted_at: serverTimestamp()
+      });
+    }
     form.reset();
     form.style.display = 'none';
     status.textContent = t(attending === 'yes' ? 'rsvp.thanks.yes' : 'rsvp.thanks.no').replace('{name}', name);
